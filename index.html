@@ -1,0 +1,293 @@
+export default function LandingKada() {
+  const cfg = {
+    brand: "Kada",
+    accent: "#1f4b3a", // vert profond (cohérent avec tes autres projets)
+    price: "59€ / mois",
+    promise: "Site vitrine livré en 3 jours — ou gratuit",
+    ctaPrimary: "Démarrer mon site",
+    ctaSecondary: "Voir des exemples",
+    whatsapp: "#contact", // remplace plus tard par un lien WhatsApp officiel
+  };
+
+  return (
+    <div className="min-h-screen text-neutral-900 scroll-smooth">
+      <style>{`
+        :root{ --accent:${cfg.accent}; }
+        .accent{ color:var(--accent); }
+        .bg-accent{ background:var(--accent); }
+        .ring-accent{ box-shadow: 0 0 0 6px color-mix(in oklab, var(--accent) 18%, transparent); }
+        .container{ width:100%; max-width:1100px; margin-inline:auto; padding-inline:1rem; }
+        .glass{ backdrop-filter: saturate(140%) blur(8px); background:color-mix(in oklab, white 70%, rgba(255,255,255,.6)); }
+        .btn{ display:inline-flex; align-items:center; justify-content:center; gap:.5rem; padding:.9rem 1.2rem; border-radius:1rem; font-weight:600; }
+        .btn-primary{ background:var(--accent); color:white; }
+        .btn-outline{ border:1px solid color-mix(in oklab, var(--accent) 45%, #d1d5db); color:var(--accent); background:white; }
+        .badge{ font-size:.8rem; padding:.3rem .6rem; border-radius:.6rem; border:1px solid #e5e7eb; background:white; }
+        .chip{ padding:.35rem .6rem; border-radius:999px; background:#0f172a; color:white; font-size:.78rem; }
+        .card{ border:1px solid #e5e7eb; border-radius:1.2rem; background:white; }
+        .shadow-soft{ box-shadow:0 10px 30px rgba(0,0,0,.08); }
+        header.sticky{ position:sticky; top:0; z-index:50; }
+        .hero{ position:relative; }
+        .hero::before{ content:""; position:absolute; inset:0; background:url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat; }
+        .hero::after{ content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.45)); } /* filtre sombre 50% */
+        .hero > .inner{ position:relative; z-index:1; }
+        .grid{ display:grid; gap:1rem; }
+        @media (min-width:768px){ .grid-2{ grid-template-columns: 1.2fr .8fr; } .grid-3{ grid-template-columns: repeat(3,1fr);} .grid-4{ grid-template-columns: repeat(4,1fr);} }
+      `}</style>
+
+      {/* Header */}
+      <header className="sticky bg-white/85 glass border-b border-gray-100">
+        <div className="container flex items-center justify-between h-16">
+          <a href="#top" className="flex items-center gap-2 font-extrabold tracking-tight text-lg">
+            <span className="inline-flex items-center justify-center w-9 h-9 rounded-xl bg-accent text-white">K</span>
+            <span>{cfg.brand}</span>
+          </a>
+          <nav className="hidden md:flex items-center gap-6 text-sm">
+            <a href="#offre">Offre</a>
+            <a href="#realisations">Réalisations</a>
+            <a href="#avis">Avis</a>
+            <a href="#faq">FAQ</a>
+            <a href="#contact">Contact</a>
+            <a href="#pricing" className="btn btn-primary">{cfg.ctaPrimary}</a>
+          </nav>
+        </div>
+      </header>
+
+      {/* Hero = Hook + Preuve + CTA */}
+      <section id="top" className="hero min-h-[82vh] grid place-items-center">
+        <div className="inner container py-16">
+          <div className="max-w-2xl text-white">
+            <div className="inline-flex items-center gap-2 mb-4">
+              <span className="badge bg-white/90 text-neutral-900">{cfg.brand}</span>
+              <span className="badge bg-white/20 border-white/20 text-white">Studio web solo — ultra humain</span>
+            </div>
+            <h1 className="text-4xl md:text-6xl font-extrabold leading-[1.1]">
+              Des sites vitrines qui <span className="text-emerald-300">convertissent</span>.
+            </h1>
+            <p className="mt-4 text-lg md:text-xl text-white/90">
+              {cfg.promise}. Abonnement tout compris à <b>{cfg.price}</b>, sans frais de départ. Tu m'envoies le brief, je m'occupe du reste.
+            </p>
+
+            <div className="mt-8 flex flex-wrap items-center gap-3">
+              <a href="#pricing" className="btn btn-primary ring-accent">{cfg.ctaPrimary} →</a>
+              <a href="#realisations" className="btn btn-outline bg-white/95">{cfg.ctaSecondary}</a>
+              <span className="chip">Livré en 3 jours</span>
+              <span className="chip">100% responsive</span>
+              <span className="chip">SEO local inclus</span>
+            </div>
+
+            <div className="mt-10 grid grid-4 gap-3 max-w-xl">
+              {[
+                ["4.9/5", "moyenne des avis"],
+                ["+20", "sites livrés"],
+                ["0€", "frais de départ"],
+                ["<24h", "première maquette"],
+              ].map(([k,v])=> (
+                <div key={k} className="card px-4 py-3 shadow-soft bg-white/95 text-neutral-900">
+                  <div className="text-2xl font-bold accent">{k}</div>
+                  <div className="text-sm text-neutral-600">{v}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Bande logos / crédibilité */}
+      <section className="py-10 bg-neutral-50 border-y">
+        <div className="container">
+          <p className="text-center text-neutral-500 text-sm mb-6">Ils m'ont confié leur vitrine</p>
+          <div className="grid grid-4 items-center opacity-80">
+            {["Logo 1","Logo 2","Logo 3","Logo 4","Logo 5","Logo 6","Logo 7","Logo 8"].map(x=> (
+              <div key={x} className="h-12 rounded-xl bg-white border flex items-center justify-center text-neutral-400">{x}</div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Offre (stack de valeur) */}
+      <section id="offre" className="py-16">
+        <div className="container grid md:grid-cols-2 gap-8 items-start">
+          <div>
+            <h2 className="text-3xl md:text-4xl font-extrabold">L'offre qui va droit au but</h2>
+            <p className="mt-3 text-neutral-700">Un seul plan simple. Pas d'à-valoir, pas de jargon. Tu obtiens un site qui te ramène des clients — et je reste là pour l'optimiser.</p>
+            <ul className="mt-6 space-y-3">
+              {[
+                "Nom de domaine + hébergement inclus",
+                "Design sur-mesure et ultra lisible",
+                "Pages clés: accueil, services, avis, contact (sur un seul flux)",
+                "Optimisation mobile + vitesse",
+                "SEO local (balises, titres, métas)",
+                "Mises à jour légères illimitées",
+                "Support WhatsApp réactif",
+              ].map((li)=> (
+                <li key={li} className="flex items-start gap-3">
+                  <span className="mt-1 inline-block w-5 h-5 rounded-full bg-accent text-white text-center">✓</span>
+                  <span>{li}</span>
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-6 grid grid-3">
+              {[
+                ["E‑commerce", "Boutique simple, paiement Stripe"],
+                ["Photo / Vidéo", "Portrait, reels, mini-clips"],
+                ["Communication", "Stories, posts, pubs locales"],
+              ].map(([t, s]) => (
+                <div key={t} className="card p-4">
+                  <div className="font-semibold">{t}</div>
+                  <div className="text-sm text-neutral-600">{s}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Pricing sticky */}
+          <aside id="pricing" className="card p-6 shadow-soft sticky top-20">
+            <div className="badge">Abonnement sans engagement long</div>
+            <div className="mt-3 text-4xl font-extrabold">{cfg.price}</div>
+            <div className="mt-1 text-neutral-600">Sans frais de départ · Résiliable à tout moment</div>
+            <ul className="mt-6 space-y-2 text-sm">
+              <li>✅ {cfg.promise}</li>
+              <li>✅ Nom de domaine inclus</li>
+              <li>✅ Hébergement performant</li>
+              <li>✅ Support prioritaire</li>
+            </ul>
+            <a href={cfg.whatsapp} className="btn btn-primary w-full mt-6">Je lance mon site maintenant</a>
+            <p className="text-xs text-neutral-500 mt-3">Besoin d'un devis spécifique ? <a href="#contact" className="underline">Écris‑moi</a>.</p>
+          </aside>
+        </div>
+      </section>
+
+      {/* Réalisations */}
+      <section id="realisations" className="py-16 bg-neutral-50 border-y">
+        <div className="container">
+          <h2 className="text-3xl md:text-4xl font-extrabold">Quelques projets récents</h2>
+          <p className="text-neutral-700 mt-2">Des vitrines rapides, nettes, qui mettent l'essentiel en avant.</p>
+          <div className="grid md:grid-cols-3 gap-4 mt-6">
+            {[1,2,3,4,5,6].map(i => (
+              <a key={i} href="#" className="group card overflow-hidden">
+                <div className="aspect-video bg-neutral-200"></div>
+                <div className="p-4">
+                  <div className="font-semibold">Projet {i}</div>
+                  <div className="text-sm text-neutral-600">Secteur — résultat concret (ex: +x% appels)</div>
+                </div>
+              </a>
+            ))}
+          </div>
+          <div className="text-center mt-6">
+            <a href="#contact" className="btn btn-outline">Voir d'autres exemples</a>
+          </div>
+        </div>
+      </section>
+
+      {/* Process */}
+      <section className="py-16">
+        <div className="container grid md:grid-cols-5 gap-3">
+          {[
+            ["Appel", "15 min pour comprendre ton besoin"],
+            ["Brief", "Tu m'envoies texte + photos"],
+            ["Maquette", "Premier rendu sous 24h"],
+            ["Mise en ligne", "Ton site est live sous 3 jours"],
+            ["Suivi", "J'ajuste selon tes retours"],
+          ].map(([t,s], idx)=> (
+            <div key={t} className="card p-4 shadow-soft">
+              <div className="text-xs text-neutral-500">Étape {idx+1}</div>
+              <div className="font-semibold mt-1">{t}</div>
+              <div className="text-sm text-neutral-600">{s}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Avis */}
+      <section id="avis" className="py-16 bg-neutral-50 border-y">
+        <div className="container">
+          <h2 className="text-3xl md:text-4xl font-extrabold">Ce que disent mes clients</h2>
+          <div className="grid md:grid-cols-3 gap-4 mt-6">
+            {[
+              ["ImmoÉvolution", "Super réactif, site livré en 3 jours, propre et clair."],
+              ["La Solina", "Augmentation des commandes grâce à un menu en ligne lisible."],
+              ["Les Fermiers Bigourdans", "Excellent rendu mobile, on a des appels tous les jours."],
+            ].map(([a,b]) => (
+              <div key={a} className="card p-5 shadow-soft">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">⭐</div>
+                  <div>
+                    <div className="font-semibold">{a}</div>
+                    <div className="text-xs text-neutral-500">Avis vérifié</div>
+                  </div>
+                </div>
+                <p className="mt-3 text-neutral-700">“{b}”</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section id="faq" className="py-16">
+        <div className="container grid md:grid-cols-2 gap-6">
+          {[
+            ["Pourquoi l'abonnement ?", "Pour garder ton site vivant: hébergement, mises à jour, petites modifs, support. Pas d'à‑valoir, tu peux arrêter quand tu veux."],
+            ["Et si je n'aime pas la maquette ?", "On ajuste jusqu'à ce que ça te convienne. Si je ne livre pas en 3 jours, c'est gratuit."],
+            ["Puis-je migrer plus tard ?", "Oui. Tu peux récupérer ton contenu et je t'aide à migrer si besoin."],
+            ["Propose‑tu le e‑commerce ?", "Oui en option: Stripe, panier simple, fiches produit claires."],
+          ].map(([q,a]) => (
+            <div key={q} className="card p-5 shadow-soft">
+              <div className="font-semibold">{q}</div>
+              <p className="text-neutral-700 mt-2">{a}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Contact / Dernier CTA */}
+      <section id="contact" className="py-16 bg-neutral-900 text-white">
+        <div className="container grid md:grid-cols-2 gap-8 items-center">
+          <div>
+            <h2 className="text-3xl md:text-4xl font-extrabold">On lance ton site ?</h2>
+            <p className="mt-2 text-white/80">Envoie‑moi 3 infos (activité, objectif, contact) et on démarre aujourd'hui.</p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <a href="#pricing" className="btn btn-primary">Je démarre maintenant</a>
+              <a href="#" className="btn btn-outline bg-white text-neutral-900">Parler sur WhatsApp</a>
+            </div>
+            <p className="mt-3 text-sm text-white/70">Email: <a className="underline" href="mailto:hello@kada.site">hello@kada.site</a></p>
+          </div>
+          <form className="card p-5 shadow-soft bg-white text-neutral-900">
+            <div className="grid gap-3">
+              <label className="grid gap-1 text-sm">
+                <span>Nom</span>
+                <input className="border rounded-lg p-2" placeholder="Ton nom"/>
+              </label>
+              <label className="grid gap-1 text-sm">
+                <span>Email</span>
+                <input className="border rounded-lg p-2" placeholder="ton@email.fr"/>
+              </label>
+              <label className="grid gap-1 text-sm">
+                <span>Message</span>
+                <textarea className="border rounded-lg p-2" rows={4} placeholder="Dis‑moi ce que tu veux obtenir…"/>
+              </label>
+              <button className="btn btn-primary">Envoyer</button>
+              <p className="text-xs text-neutral-500">En cliquant, tu acceptes les mentions légales (liens dans le footer).</p>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <footer className="py-10 bg-white border-t">
+        <div className="container flex flex-col md:flex-row items-center justify-between gap-3 text-sm">
+          <div className="flex items-center gap-2">
+            <span className="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-accent text-white">K</span>
+            <span>{cfg.brand} · 2025</span>
+          </div>
+          <div className="flex items-center gap-5">
+            <a href="#">CGV</a>
+            <a href="#">Mentions légales</a>
+            <a href="#">Instagram</a>
+            <a href="#">TikTok</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
