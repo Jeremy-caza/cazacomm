@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Caza Comm — Sites vitrines en 3 jours</title>
+  <title>Caza Comm — création de Sites </title>
   <style>
     :root{
       --accent:#0F6D4E; /* couleur marque (vert profond) */
@@ -59,6 +59,10 @@
     input, textarea{padding:.7rem .8rem; border:1px solid var(--line); border-radius:12px; font:inherit}
     textarea{resize:vertical}
 
+    /* logo section1 */
+    .logo-tile{height:64px; display:flex; align-items:center; justify-content:center;}
+    .logo-img{max-height:36px; max-width:140px; object-fit:contain; opacity:.9; filter:grayscale(100%);}
+
     /* Small utilities */
     .mt-2{margin-top:.5rem} .mt-3{margin-top:.75rem} .mt-4{margin-top:1rem} .mt-6{margin-top:1.5rem}
     .center{text-align:center}
@@ -83,33 +87,30 @@
   <!-- Hero -->
   <section id="top" class="hero">
     <div class="inner container">
-      <div class="badge">Caza Comm</div>
-      <div class="badge" style="margin-left:.5rem; background:rgba(255,255,255,.18); color:#fff; border-color:rgba(255,255,255,.25)">Studio web solo — ultra humain</div>
-      <h1>Des sites vitrines qui <span style="color:#6EE7B7">convertissent</span>.</h1>
-      <p>Site vitrine livré en 3 jours — <b>ou gratuit</b>. Abonnement tout compris à <b>59€ / mois</b>, sans frais de départ. Tu m'envoies le brief, je m'occupe du reste.</p>
+      <h1>Des sites qui <span style="color:#6EE7B7">convertissent</span>.</h1>
+      <p>Site livré en 3 jours — <b>ou gratuit*</b>. Abonnement tout compris à partir de<b>59€ / mois</b>, sans frais de départ.</p>
       <div class="mt-4" style="display:flex; flex-wrap:wrap; gap:.6rem">
-        <a href="#pricing" class="btn btn-primary" style="box-shadow:0 0 0 6px rgba(15,109,78,.15)">Démarrer mon site →</a>
-        <a href="#realisations" class="btn btn-outline" style="background:#fff">Voir des exemples</a>
-        <span class="chip">Livré en 3 jours</span>
+        <a href="https://buy.stripe.com/cNi3cwgc59Ujd05dSm9bO02" class="btn btn-primary" style="box-shadow:0 0 0 6px rgba(15,109,78,.15)">Démarrer mon site →</a>
+      </div>
+      <div class="mt-2" style="display:flex; flex-wrap:wrap; gap:.6rem">
+    <a href="#realisations" class="btn btn-outline" style="background:#fff">Voir des exemples</a>
+        <span class="chip">Livré en 1 semaine</span>
         <span class="chip">100% responsive</span>
         <span class="chip">SEO local inclus</span>
       </div>
+    </div>
 
       <div class="grid grid-4 mt-6" style="max-width:640px">
         <div class="card" style="padding:12px 16px">
-          <div style="font-weight:800; font-size:1.4rem; color:var(--accent)">4.9/5</div>
+          <div style="font-weight:800; font-size:1.4rem; color:var(--accent)">5/5</div>
           <div class="muted" style="font-size:.9rem">moyenne des avis</div>
         </div>
         <div class="card" style="padding:12px 16px">
-          <div style="font-weight:800; font-size:1.4rem; color:var(--accent)">+20</div>
-          <div class="muted" style="font-size:.9rem">sites livrés</div>
-        </div>
-        <div class="card" style="padding:12px 16px">
           <div style="font-weight:800; font-size:1.4rem; color:var(--accent)">0€</div>
-          <div class="muted" style="font-size:.9rem">frais de départ</div>
+          <div class="muted" style="font-size:.9rem">frais de départ*</div>
         </div>
         <div class="card" style="padding:12px 16px">
-          <div style="font-weight:800; font-size:1.4rem; color:var(--accent)"><24h</div>
+          <div style="font-weight:800; font-size:1.4rem; color:var(--accent)"><72h</div>
           <div class="muted" style="font-size:.9rem">première maquette</div>
         </div>
       </div>
@@ -119,9 +120,11 @@
   <!-- Logos -->
   <section class="section-muted">
     <div class="container">
-      <p class="center muted" style="margin:0 0 1rem">Ils m'ont confié leur vitrine</p>
+      <h2 class="center muted" style="margin:0 0 1rem">Ils m'ont confié leur vitrineet leur confiance</h2>
       <div class="grid grid-4" style="align-items:center; opacity:.85">
-        <div class="card" style="height:48px; display:flex; align-items:center; justify-content:center; color:#9ca3af">Logo 1</div>
+        <div class="card logo-tile">
+  <img src="images/logo1.jpg" alt="ImmoÉvolution" class="logo-img">
+</div>
         <div class="card" style="height:48px; display:flex; align-items:center; justify-content:center; color:#9ca3af">Logo 2</div>
         <div class="card" style="height:48px; display:flex; align-items:center; justify-content:center; color:#9ca3af">Logo 3</div>
         <div class="card" style="height:48px; display:flex; align-items:center; justify-content:center; color:#9ca3af">Logo 4</div>
@@ -134,14 +137,14 @@
     <div class="container grid grid-2" style="align-items:start">
       <div>
         <h2>L'offre qui va droit au but</h2>
-        <p class="muted mt-2">Un seul plan simple. Pas d'à‑valoir, pas de jargon. Tu obtiens un site qui te ramène des clients — et je reste là pour l'optimiser.</p>
+        <p class="muted mt-2">3 plans simples. Pas de tarifs excessifs, pas de jargon. Tu obtiens un site qui te correspond et qui te ramène des clients — Nous restons là pour l'optimiser.</p>
         <ul class="mt-4" style="padding-left:0; list-style:none; display:grid; gap:.75rem">
           <li>✅ Nom de domaine + hébergement inclus</li>
           <li>✅ Design sur‑mesure et ultra lisible</li>
-          <li>✅ Pages clés : accueil, services, avis, contact (sur un seul flux)</li>
+          <li>✅ Pages clés : accueil, services, avis, contact</li>
           <li>✅ Optimisation mobile + vitesse</li>
           <li>✅ SEO local (balises, titres, métas)</li>
-          <li>✅ Mises à jour légères illimitées</li>
+          <li>✅ Mises à jour illimitées</li>
           <li>✅ Support WhatsApp réactif</li>
         </ul>
         <div class="grid grid-3 mt-4">
@@ -160,16 +163,16 @@
         </div>
       </div>
       <aside id="pricing" class="card sticky" style="padding:20px">
-        <div class="badge">Abonnement sans engagement long</div>
+        <div class="badge">Abonnement sans engagement</div>
         <div style="font-size:2.2rem; font-weight:900" class="mt-2">59€ / mois</div>
-        <div class="muted">Sans frais de départ · Résiliable à tout moment</div>
+        <div class="muted">Sans frais de départ* · Résiliable à tout moment</div>
         <ul class="mt-3" style="padding-left:0; list-style:none; display:grid; gap:.5rem; font-size:.95rem">
-          <li>✅ Site livré en 3 jours — ou gratuit</li>
+          <li>✅ Site livré en 1 semaine — ou gratuit*</li>
           <li>✅ Nom de domaine inclus</li>
           <li>✅ Hébergement performant</li>
           <li>✅ Support prioritaire</li>
         </ul>
-        <a href="#contact" class="btn btn-primary" style="width:100%; margin-top:1rem">Je lance mon site maintenant</a>
+        <a href="https://buy.stripe.com/cNi3cwgc59Ujd05dSm9bO02" class="btn btn-primary" style="width:100%; margin-top:1rem">Je lance mon site maintenant</a>
         <p class="muted" style="font-size:.85rem; margin-top:.6rem">Besoin d'un devis spécifique ? <a href="#contact" style="text-decoration:underline">Écris‑moi</a>.</p>
       </aside>
     </div>
@@ -179,56 +182,56 @@
   <section id="realisations" class="section-muted">
     <div class="container">
       <h2>Quelques projets récents</h2>
-      <p class="muted mt-2">Des vitrines rapides, nettes, qui mettent l'essentiel en avant.</p>
+      <p class="muted mt-2">Des sites, qui mettent l'essentiel en avant.</p>
       <div class="grid grid-3 mt-4">
         <a href="#" class="card" style="overflow:hidden">
           <div style="aspect-ratio:16/9; background:#e5e7eb"></div>
           <div style="padding:14px">
             <div style="font-weight:700">Projet 1</div>
-            <div class="muted" style="font-size:.95rem">Secteur — résultat concret (ex: +x% appels)</div>
+            <div class="muted" style="font-size:.95rem">Secteur — Avis du client</div>
           </div>
         </a>
         <a href="#" class="card" style="overflow:hidden">
           <div style="aspect-ratio:16/9; background:#e5e7eb"></div>
           <div style="padding:14px">
             <div style="font-weight:700">Projet 2</div>
-            <div class="muted" style="font-size:.95rem">Secteur — résultat concret</div>
+            <div class="muted" style="font-size:.95rem">Secteur — Avis du client</div>
           </div>
         </a>
         <a href="#" class="card" style="overflow:hidden">
           <div style="aspect-ratio:16/9; background:#e5e7eb"></div>
           <div style="padding:14px">
             <div style="font-weight:700">Projet 3</div>
-            <div class="muted" style="font-size:.95rem">Secteur — résultat concret</div>
+            <div class="muted" style="font-size:.95rem">Secteur — Avis du client</div>
           </div>
         </a>
       </div>
-      <p class="center mt-4"><a href="#contact" class="btn btn-outline">Voir d'autres exemples</a></p>
+      <p class="center mt-4"><a href="https://buy.stripe.com/cNi3cwgc59Ujd05dSm9bO02" class="btn btn-outline">Moi aussi, j’en veux un</a></p>
     </div>
   </section>
 
   <!-- Process -->
   <section>
     <div class="container grid grid-5">
-      <div class="card" style="padding:14px"><div class="muted" style="font-size:.8rem">Étape 1</div><div style="font-weight:700">Appel</div><div class="muted" style="font-size:.95rem">15 min pour comprendre ton besoin</div></div>
+      <div class="card" style="padding:14px"><div class="muted" style="font-size:.8rem">Étape 1</div><div style="font-weight:700">Appel</div><div class="muted" style="font-size:.95rem">Pour comprendre ton besoin</div></div>
       <div class="card" style="padding:14px"><div class="muted" style="font-size:.8rem">Étape 2</div><div style="font-weight:700">Brief</div><div class="muted" style="font-size:.95rem">Tu m'envoies texte + photos</div></div>
-      <div class="card" style="padding:14px"><div class="muted" style="font-size:.8rem">Étape 3</div><div style="font-weight:700">Maquette</div><div class="muted" style="font-size:.95rem">Premier rendu sous 24h</div></div>
-      <div class="card" style="padding:14px"><div class="muted" style="font-size:.8rem">Étape 4</div><div style="font-weight:700">Mise en ligne</div><div class="muted" style="font-size:.95rem">Ton site est live sous 3 jours</div></div>
-      <div class="card" style="padding:14px"><div class="muted" style="font-size:.8rem">Étape 5</div><div style="font-weight:700">Suivi</div><div class="muted" style="font-size:.95rem">J'ajuste selon tes retours</div></div>
+      <div class="card" style="padding:14px"><div class="muted" style="font-size:.8rem">Étape 3</div><div style="font-weight:700">Maquette</div><div class="muted" style="font-size:.95rem">Premier rendu sous 72h</div></div>
+      <div class="card" style="padding:14px"><div class="muted" style="font-size:.8rem">Étape 4</div><div style="font-weight:700">Mise en ligne</div><div class="muted" style="font-size:.95rem">Ton site est livré sous 1 sem</div></div>
+      <div class="card" style="padding:14px"><div class="muted" style="font-size:.8rem">Étape 5</div><div style="font-weight:700">Suivi</div><div class="muted" style="font-size:.95rem">On ajuste selon tes retours</div></div>
     </div>
   </section>
 
   <!-- Avis -->
   <section id="avis" class="section-muted">
     <div class="container">
-      <h2>Ce que disent mes clients</h2>
+      <h2>Ce que disent nos clients</h2>
       <div class="grid grid-3 mt-4">
         <div class="card" style="padding:18px">
           <div style="display:flex; gap:.8rem; align-items:center">
             <div style="width:40px; height:40px; border-radius:10px; background:rgba(15,109,78,.12); display:flex; align-items:center; justify-content:center">⭐</div>
             <div><div style="font-weight:700">ImmoÉvolution</div><div class="muted" style="font-size:.8rem">Avis vérifié</div></div>
           </div>
-          <p class="mt-3" style="margin:0">“Super réactif, site livré en 3 jours, propre et clair.”</p>
+          <p class="mt-3" style="margin:0">“Super réactif, site livré enmoins d'1 semaine, propre et clair.”</p>
         </div>
         <div class="card" style="padding:18px">
           <div style="display:flex; gap:.8rem; align-items:center">
@@ -251,9 +254,9 @@
   <!-- FAQ -->
   <section id="faq">
     <div class="container grid grid-2">
-      <div class="card" style="padding:18px"><div style="font-weight:700">Pourquoi l'abonnement ?</div><p class="muted">Pour garder ton site vivant : hébergement, mises à jour, petites modifs, support. Pas d'à‑valoir, tu peux arrêter quand tu veux.</p></div>
-      <div class="card" style="padding:18px"><div style="font-weight:700">Et si je n'aime pas la maquette ?</div><p class="muted">On ajuste jusqu'à ce que ça te convienne. Si je ne livre pas en 3 jours, c'est gratuit.</p></div>
-      <div class="card" style="padding:18px"><div style="font-weight:700">Puis‑je migrer plus tard ?</div><p class="muted">Oui. Tu peux récupérer ton contenu et je t'aide à migrer si besoin.</p></div>
+      <div class="card" style="padding:18px"><div style="font-weight:700">Pourquoi l'abonnement ?</div><p class="muted">Pour garder ton site vivant : hébergement, mises à jour, modifs, support. Pas de prix excessifs, tu peux arrêter quand tu veux.</p></div>
+      <div class="card" style="padding:18px"><div style="font-weight:700">Et si je n'aime pas la maquette ?</div><p class="muted">On ajuste jusqu'à ce que ça te convienne. Si je ne livre pas en 1 semaine, c'est gratuit* (Uniquement si les processus sont respectés.)</p></div>
+      <div class="card" style="padding:18px"><div style="font-weight:700">Tu t’occupes de tout, même si je n’ai pas de contenu prêt ?</div><p class="muted">Les contenus à créer (photos, vidéos, visuels…) sont en option : on peut les ajouter. Vous les gardez à vie et pouvez les réutiliser partout (site, réseaux).</p></div>
       <div class="card" style="padding:18px"><div style="font-weight:700">Proposes‑tu le e‑commerce ?</div><p class="muted">Oui en option : Stripe, panier simple, fiches produit claires.</p></div>
     </div>
   </section>
@@ -265,17 +268,17 @@
         <h2>On lance ton site ?</h2>
         <p class="mt-2" style="color:rgba(255,255,255,.85)">Envoie‑moi 3 infos (activité, objectif, contact) et on démarre aujourd'hui.</p>
         <div class="mt-3" style="display:flex; flex-wrap:wrap; gap:.6rem">
-          <a href="#pricing" class="btn btn-primary">Je démarre maintenant</a>
-          <a href="#" class="btn btn-outline" style="background:#fff; color:#0b1220">Parler sur WhatsApp</a>
+          <a href="https://buy.stripe.com/cNi3cwgc59Ujd05dSm9bO02" class="btn btn-primary">Je démarre maintenant</a>
+          <a href="tel:+33767197467" class="btn btn-outline" style="background:#fff; color:#0b1220">Parler sur WhatsApp</a>
         </div>
-        <p class="mt-3" style="font-size:.9rem; color:rgba(255,255,255,.7)">Email : <a class="" href="mailto:hello@cazacomm.fr" style="text-decoration:underline">hello@cazacomm.fr</a></p>
+        <p class="mt-3" style="font-size:.9rem; color:rgba(255,255,255,.7)">Email : <a class="" href="mailto:caza.comm@gmail.com" style="text-decoration:underline">caza.comm@gmail.com</a></p>
       </div>
       <form class="card" style="padding:18px; color:#0f172a; background:#fff">
         <label class="mt-2" style="display:grid; gap:.4rem"><span>Nom</span><input placeholder="Ton nom" /></label>
         <label class="mt-2" style="display:grid; gap:.4rem"><span>Email</span><input placeholder="ton@email.fr" /></label>
         <label class="mt-2" style="display:grid; gap:.4rem"><span>Message</span><textarea rows="4" placeholder="Dis‑moi ce que tu veux obtenir…"></textarea></label>
         <button class="btn btn-primary mt-3">Envoyer</button>
-        <p class="muted" style="font-size:.8rem">En cliquant, tu acceptes les mentions légales (liens dans le footer).</p>
+        <p class="muted" style="font-size:.8rem">En cliquant, tu acceptes les mentions légales.</p>
       </form>
     </div>
   </section>
@@ -287,6 +290,8 @@
         <a href="#">CGV</a>
         <a href="#">Mentions légales</a>
         <a href="#">Instagram</a>
+        <a href="#">Facebook</a>
+        <a href="#">Linkedin</a>
         <a href="#">TikTok</a>
       </div>
     </div>
