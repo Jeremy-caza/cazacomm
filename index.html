@@ -23,107 +23,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
-  <style>
-    /* ===== Reset minimal + variables ===== */
-    *,*::before,*::after{box-sizing:border-box}
-    :root{--bg:#0b1220;--card:#0f172a;--muted:#94a3b8;--text:#e5e7eb;--white:#fff;--shadow:0 10px 30px rgba(2,6,23,.35);--brand:#12b76a;--brand-2:#0ea46d;--accent:#22d3ee;--max:1200px}
-    html,body{height:100%}
-    body{margin:0;background:radial-gradient(1200px 800px at 10% -10%,rgba(34,211,238,.12),transparent 60%),radial-gradient(900px 600px at 100% 0,rgba(18,183,106,.15),transparent 55%),var(--bg);color:var(--text);font:400 16px/1.6 Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;letter-spacing:.2px}
-    h1,h2,h3{margin:0 0 10px;color:var(--white);font-weight:700}
-    h1{font-size:clamp(32px,5vw,56px);line-height:1.05;font-family:"Playfair Display",serif}
-    h2{font-size:clamp(26px,4vw,36px)}
-    h3{font-size:clamp(20px,2.6vw,24px)}
-    p{margin:0 0 14px;color:#dbe1ea}
-    p:not(.center-btn){text-align:justify;text-justify:inter-word;text-align-last:left;hyphens:auto;-webkit-hyphens:auto}
-    a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block}
-    .wrap{width:min(var(--max),94%);margin-inline:auto}
-    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:14px;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#041016;font-weight:700;box-shadow:var(--shadow);transition:.25s transform,.25s box-shadow}
-    .btn:hover{transform:translateY(-2px);box-shadow:0 14px 36px rgba(18,183,106,.35)}
-    .btn.secondary{background:#0f172a;color:#e2e8f0;border:1px solid #24324a}
-    .chip{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(148,163,184,.25);color:#cbd5e1;font-size:12px}
-
-    /* ===== Header ===== */
-    header{position:sticky;top:0;z-index:50;background:linear-gradient(to bottom,rgba(11,18,32,.9),rgba(11,18,32,.65));backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid rgba(148,163,184,.15)}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
-    .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.3px}
-    .brand .logo{width:34px;height:34px;display:grid;place-items:center;border-radius:10px;background:conic-gradient(from 0deg at 50% 50%,#0ea46d, #22d3ee, #0ea46d);box-shadow:0 6px 18px rgba(34,211,238,.25)}
-    .brand .logo svg{width:22px;height:22px;fill:#041016}
-    .brand span{font-size:18px}
-    nav ul{display:flex;gap:20px;list-style:none;padding:0;margin:0}
-    nav a{padding:8px 10px;border-radius:10px;color:#cbd5e1}
-    nav a:hover{background:rgba(148,163,184,.1)}
-    .burger{display:none;border:1px solid #22314b;background:#0f172a;border-radius:12px;padding:10px}
-    .burger svg{width:22px;height:22px;fill:#cbd5e1}
-
-    /* ===== Hero ===== */
-    .hero{position:relative;padding:88px 0 56px;overflow:hidden}
-    .grid-hero{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
-    .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
-    .kpi{padding:16px;border-radius:14px;background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03));border:1px solid rgba(148,163,184,.18)}
-    .kpi .num{font:800 clamp(22px,3.2vw,34px)/1 Playfair Display,serif;color:#fff}
-    .kpi small{color:#a8b3c7}
-    .note{font-size:12px;color:#9fb2c9;margin-top:10px}
-    .blob{position:absolute;inset:auto -300px -300px auto;width:700px;height:700px;background:radial-gradient(40% 40% at 50% 50%,rgba(34,211,238,.2),transparent 70%);filter:blur(32px);transform:rotate(20deg)}
-
-    /* ===== Sections ===== */
-    section{padding:74px 0;border-top:1px solid rgba(148,163,184,.12)}
-    .two{display:grid;grid-template-columns:1fr 1fr;gap:26px}
-    .card{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03));border:1px solid rgba(148,163,184,.16);border-radius:16px;padding:18px;box-shadow:var(--shadow)}
-    .list{display:grid;gap:8px;margin-top:8px}
-    .list li{display:flex;gap:10px;align-items:flex-start}
-    .tick{width:18px;height:18px;border-radius:6px;background:linear-gradient(135deg,var(--brand),var(--brand-2));display:grid;place-items:center;flex:0 0 18px}
-    .tick svg{width:12px;height:12px;fill:#041016}
-
-    /* ===== Offres ===== */
-    .tiers{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-    .tier .head{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
-    .tier h3{margin:0}
-    .badge{font-size:12px;padding:6px 10px;border:1px solid rgba(148,163,184,.26);border-radius:999px;color:#cbd5e1}
-
-    /* ===== Exemples ===== */
-    .gallery{position:relative}
-    .rail{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 4px;-webkit-overflow-scrolling:touch}
-    .rail::-webkit-scrollbar{height:8px}
-    .rail::-webkit-scrollbar-thumb{background:#334155;border-radius:999px}
-    .mock{flex:0 0 auto;width:min(320px,70vw);aspect-ratio:16/10;border-radius:16px;scroll-snap-align:start;background:linear-gradient(145deg,#0f172a,#0b1220);border:1px solid #22314b;position:relative;overflow:hidden}
-    .mock::after{content:"Aperçu";position:absolute;bottom:8px;right:10px;font-size:12px;color:#94a3b8}
-
-    /* ===== Avis ===== */
-    .quote{display:grid;gap:10px}
-    .stars{color:#fbbf24}
-    .author{color:#cbd5e1;font-size:14px}
-
-    /* ===== Process ===== */
-    .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:10px}
-    .step{padding:16px;border-radius:16px;background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03));border:1px solid rgba(148,163,184,.16)}
-    .step .n{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#041016;font-weight:800;margin-bottom:6px}
-
-    /* ===== FAQ ===== */
-    .faq{display:grid;gap:10px}
-    details{border:1px solid rgba(148,163,184,.22);border-radius:14px;padding:12px 14px;background:rgba(255,255,255,.03)}
-    details>summary{cursor:pointer;list-style:none}
-    details[open]{background:rgba(255,255,255,.06)}
-
-    /* ===== Contact ===== */
-    .cta{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center}
-    .bubble{padding:18px;border-radius:16px;background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03));border:1px solid rgba(148,163,184,.16)}
-
-    /* ===== Footer ===== */
-    footer{padding:24px 0;border-top:1px solid rgba(148,163,184,.12);color:#a8b3c7}
-    .foot{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between}
-    .social{display:flex;gap:12px}
-    .social a{display:grid;place-items:center;width:38px;height:38px;border-radius:12px;border:1px solid #22314b;background:#0f172a}
-
-    /* ===== Reveal on scroll ===== */
-    .reveal{opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease}
-    .reveal.on{opacity:1;transform:none}
-
-    /* ===== Responsive ===== */
-    @media (max-width:980px){.grid-hero,.two,.tiers,.cta{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}.kpis{grid-template-columns:1fr 1fr 1fr}}
-    @media (max-width:720px){nav ul{display:none}.burger{display:inline-grid}.grid-hero{gap:20px}.steps{grid-template-columns:1fr 1fr}.kpis{grid-template-columns:1fr 1fr}.hero{padding:64px 0 40px}}
-    @media (max-width:520px){.steps{grid-template-columns:1fr}.kpis{grid-template-columns:1fr 1fr}.mock{width:min(260px,76vw)}}
-  </style>
+  <style>*,*::before,*::after{box-sizing:border-box}:root{--bg:radial-gradient(1200px 800px at 10% -10%,rgba(34,211,238,.10),transparent 60%),radial-gradient(900px 600px at 100% 0,rgba(18,183,106,.12),transparent 55%),#0b1220;--text:#e5e7eb;--muted:#9aa3b2;--line:#22314b;--brand:#12b76a;--brand-2:#0ea46d;--card:#0f172a;--max:1200px}html,body{height:100%}body{margin:0;background:var(--bg);color:var(--text);font:400 16px/1.6 Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;letter-spacing:.1px}h1,h2,h3{margin:0 0 12px;color:#fff;font-weight:700}h1{font-size:clamp(34px,5vw,56px);line-height:1.05}h2{font-size:clamp(26px,3.5vw,36px)}h3{font-size:clamp(18px,2.2vw,22px)}p{margin:0 0 14px;color:#cdd6e0}p:not(.center-btn){text-align:justify;text-justify:inter-word;text-align-last:left;hyphens:auto;-webkit-hyphens:auto}a{color:inherit;text-decoration:none}.wrap{width:min(var(--max),92%);margin-inline:auto}.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 16px;border-radius:12px;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#041016;font-weight:700;border:1px solid transparent;transition:.2s transform,.2s box-shadow}.btn:hover{transform:translateY(-1px);box-shadow:0 10px 24px rgba(18,183,106,.25)}.link{display:inline-flex;align-items:center;font-weight:600;border-bottom:1px solid transparent}.link:hover{border-color:#475569}header{position:sticky;top:0;z-index:40;background:linear-gradient(to bottom,rgba(11,18,32,.95),rgba(11,18,32,.82));border-bottom:1px solid var(--line);backdrop-filter:saturate(130%) blur(6px)}.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}.brand{display:flex;align-items:center;gap:10px;font-weight:800}.brand .logo{width:32px;height:32px;display:grid;place-items:center;border-radius:8px;border:1px solid var(--line);background:#0f172a}.brand .logo svg{width:18px;height:18px;fill:#cbd5e1}nav ul{display:flex;gap:18px;list-style:none;padding:0;margin:0}nav a{padding:8px 10px;border-radius:10px;color:#cbd5e1}nav a:hover{background:rgba(148,163,184,.12)}.burger{display:none;border:1px solid var(--line);background:#0f172a;border-radius:10px;padding:8px}.burger svg{width:20px;height:20px;fill:#cbd5e1}.hero{padding:110px 0 64px}.grid-hero{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center}.sub{font-size:18px;color:var(--muted)}.fine{font-size:14px;color:#91a4b7}.hero-visual{border:1px solid var(--line);border-radius:16px;min-height:260px;display:grid;place-items:center;background:#0f172a;color:#9fb2c4}section{padding:84px 0;border-top:1px solid var(--line)}.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}.tiers{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.gallery{position:relative}.rail{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 4px;-webkit-overflow-scrolling:touch}.rail::-webkit-scrollbar{height:8px}.rail::-webkit-scrollbar-thumb{background:#334155;border-radius:999px}.mock{flex:0 0 auto;width:min(320px,70vw);aspect-ratio:16/10;border-radius:16px;scroll-snap-align:start;background:#0f172a;border:1px solid var(--line);position:relative;color:#9fb2c4}.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:10px}.step{padding:16px;border-radius:14px;border:1px solid var(--line);background:var(--card)}.n{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:7px;background:#0f172a;color:#e5e7eb;font-weight:800;margin-bottom:6px;border:1px solid var(--line)}.faq{display:grid;gap:10px}details{border:1px solid var(--line);border-radius:14px;padding:12px 14px;background:var(--card);color:var(--text)}details>summary{cursor:pointer;list-style:none}footer{padding:28px 0;border-top:1px solid var(--line);color:#9fb2c4;background:#0b1220}.foot{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between}.social{display:flex;gap:12px}.social a{display:grid;place-items:center;width:38px;height:38px;border-radius:10px;border:1px solid var(--line);background:#0f172a}.reveal{opacity:0;transform:translateY(14px);transition:opacity .45s ease,transform .45s ease}.reveal.on{opacity:1;transform:none}@media (max-width:980px){.grid-hero,.tiers,.cta{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}}@media (max-width:720px){nav ul{display:none}.burger{display:inline-grid}.grid-hero{gap:20px}.hero{padding:84px 0 46px}.steps{grid-template-columns:1fr}}@media (max-width:520px){.mock{width:min(260px,80vw)}}</style>
 </head>
 <body>
   <header>
@@ -140,10 +40,8 @@
           <svg viewBox="0 0 24 24"><path d="M3 6h18v2H3zM3 11h18v2H3zM3 16h18v2H3z"/></svg>
         </button>
         <ul id="menu">
-          <li><a href="#resultats">Résultats</a></li>
           <li><a href="#offres">Offres</a></li>
           <li><a href="#exemples">Exemples</a></li>
-          <li><a href="#avis">Avis</a></li>
           <li><a href="#process">Étapes</a></li>
           <li><a href="#faq">FAQ</a></li>
           <li><a href="#contact">Contact</a></li>
@@ -153,190 +51,78 @@
   </header>
 
   <main id="top">
-    <!-- ================= HERO ================= -->
     <section class="hero wrap">
-      <div class="blob" aria-hidden="true"></div>
       <div class="grid-hero">
         <div>
-          <span class="chip">Petite équipe, gros résultats</span>
-          <h1 class="reveal">Des sites web <em style="font-style:normal;color:var(--accent)">beaux, rapides</em> et surtout <em style="font-style:normal;color:var(--brand)">efficaces</em>.</h1>
-          <p class="reveal" style="max-width:62ch">On conçoit des sites qui donnent envie d’acheter et de vous contacter. Pas de blabla : une maquette sous 72h, et votre site en ligne sous 1 semaine <strong>ou gratuit*</strong> si vous nous avez fourni les contenus à temps. Ultra humain, ultra réactif.</p>
-          <div class="reveal" style="display:flex;gap:12px;flex-wrap:wrap;margin-top:16px">
+          <h1 class="reveal">Des sites qui convertissent.</h1>
+          <p class="reveal sub">Maquette sous 72h. Mise en ligne en 1 semaine <strong>ou gratuit*</strong></p>
+          <div class="reveal" style="display:flex;gap:14px;flex-wrap:wrap;margin-top:16px">
             <a href="#contact" class="btn">Parler de mon projet</a>
-            <a href="#exemples" class="btn secondary">Voir des exemples</a>
+            <a href="#exemples" class="link">Voir des exemples</a>
           </div>
-          <div class="kpis reveal" aria-label="Chiffres clés">
-            <div class="kpi"><div class="num od" data-target="120">0</div><small>sites livrés et en cours</small></div>
-            <div class="kpi"><div class="num od" data-target="98">0</div><small>satisfaction clients</small></div>
-            <div class="kpi"><div class="num od" data-target="7">0</div><small>jours pour être en ligne</small></div>
-          </div>
-          <p class="note">* Offre « 1 semaine ou gratuit » conditionnée à la réception de tous les textes, logos et photos avant le lancement.</p>
+          <p class="fine">Petite équipe, ultra efficace et réactive.</p>
+          <p class="fine" style="margin-top:6px">* Offre conditionnée à la réception de tous les éléments avant démarrage.</p>
         </div>
-        <div class="reveal">
-          <div class="card" style="aspect-ratio:4/3;display:grid;place-items:center">
-            <p style="opacity:.9">(Zone visuel hero : capture d’un de tes sites / mockup)</p>
-          </div>
-          <div class="list" style="margin-top:12px">
-            <div class="chip">Freelances • TPE/PME • Grandes enseignes • Projets techniques</div>
-          </div>
-        </div>
+        <div class="reveal hero-visual"><p style="opacity:.7">(Aperçu d’un site)</p></div>
       </div>
     </section>
 
-    <!-- ================= RÉSULTATS ================= -->
-    <section id="resultats">
-      <div class="wrap two">
-        <div class="reveal">
-          <h2>Ce qui compte : <span style="color:var(--brand)">le résultat</span>.</h2>
-          <p>On parle audience, contacts, ventes. Nos sites chargent vite, rassurent, et guident l’utilisateur jusqu’à l’action. Vous gagnez du temps ; vos prospects comprennent immédiatement ce que vous faites et comment vous joindre.</p>
-          <ul class="list" style="margin-top:8px">
-            <li><span class="tick"><svg viewBox="0 0 24 24"><path d="M20.3 5.7l-11 11-5-5L6.7 10l2.6 2.6L18.9 3.1z"/></svg></span><p>Design clair et crédible, optimisé pour le mobile et la vitesse.</p></li>
-            <li><span class="tick"><svg viewBox="0 0 24 24"><path d="M20.3 5.7l-11 11-5-5L6.7 10l2.6 2.6L18.9 3.1z"/></svg></span><p>Parcours simple « je comprends → je clique → je vous contacte ».</p></li>
-            <li><span class="tick"><svg viewBox="0 0 24 24"><path d="M20.3 5.7l-11 11-5-5L6.7 10l2.6 2.6L18.9 3.1z"/></svg></span><p>SEO technique propre, base solide pour être trouvé sur Google.</p></li>
-          </ul>
-        </div>
-        <div class="reveal">
-          <div class="card" style="display:grid;gap:10px">
-            <h3>Concrètement, on vous aide à…</h3>
-            <ul class="list">
-              <li><span class="tick"><svg viewBox="0 0 24 24"><path d="M20.3 5.7l-11 11-5-5L6.7 10l2.6 2.6L18.9 3.1z"/></svg></span><p>Donner une image pro (même si vous débutez).</p></li>
-              <li><span class="tick"><svg viewBox="0 0 24 24"><path d="M20.3 5.7l-11 11-5-5L6.7 10l2.6 2.6L18.9 3.1z"/></svg></span><p>Être contacté plus vite (CTA, WhatsApp, téléphone, formulaire clair).</p></li>
-              <li><span class="tick"><svg viewBox="0 0 24 24"><path d="M20.3 5.7l-11 11-5-5L6.7 10l2.6 2.6L18.9 3.1z"/></svg></span><p>Présenter vos offres sans perdre les visiteurs dans le jargon.</p></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= OFFRES ================= -->
     <section id="offres">
       <div class="wrap">
-        <h2 class="reveal">Des solutions <span style="color:var(--accent)">adaptées</span> à votre situation.</h2>
-        <p class="reveal" style="max-width:70ch">Chaque besoin est différent. On écoute d’abord, puis on propose l’option la plus logique pour vous — du site vitrine simple jusqu’au e‑commerce ou à l’outil métier. Sans vous enfermer dans un modèle unique.</p>
+        <h2 class="reveal">Deux façons d’avancer</h2>
         <div class="tiers" style="margin-top:16px">
-          <div class="tier card reveal">
-            <div class="head"><h3>Site vitrine</h3><span class="badge">Idéal freelances & TPE</span></div>
-            <p>Solution légère, claire et efficace pour être trouvé et contacté. On peut le gérer en abonnement ou en forfait selon vos préférences.</p>
-            <ul class="list">
-              <li><span class="tick"><svg viewBox="0 0 24 24"><path d="M20.3 5.7l-11 11-5-5L6.7 10l2.6 2.6L18.9 3.1z"/></svg></span><p>Mise en ligne rapide (maquette 72h, livraison 1 semaine).</p></li>
-              <li><span class="tick"><svg viewBox="0 0 24 24"><path d="M20.3 5.7l-11 11-5-5L6.7 10l2.6 2.6L18.9 3.1z"/></svg></span><p>Contenus simples : qui vous êtes, ce que vous faites, comment vous joindre.</p></li>
-              <li><span class="tick"><svg viewBox="0 0 24 24"><path d="M20.3 5.7l-11 11-5-5L6.7 10l2.6 2.6L18.9 3.1z"/></svg></span><p>Évolutif : on pourra ajouter des pages et modules ensuite.</p></li>
-            </ul>
-          </div>
-          <div class="tier card reveal">
-            <div class="head"><h3>Projet sur cahier des charges</h3><span class="badge">E‑commerce, CRM, app, intégrations IA</span></div>
-            <p>Quand il faut plus technique : boutique en ligne, intégration CRM, espace client, automatisations, fonctionnalités métier… On définit ensemble la meilleure trajectoire.</p>
-            <ul class="list">
-              <li><span class="tick"><svg viewBox="0 0 24 24"><path d="M20.3 5.7l-11 11-5-5L6.7 10l2.6 2.6L18.9 3.1z"/></svg></span><p>Accompagnement de l’idée au déploiement.</p></li>
-              <li><span class="tick"><svg viewBox="0 0 24 24"><path d="M20.3 5.7l-11 11-5-5L6.7 10l2.6 2.6L18.9 3.1z"/></svg></span><p>Stack flexible : on choisit l’outil adapté (pas l’inverse).</p></li>
-              <li><span class="tick"><svg viewBox="0 0 24 24"><path d="M20.3 5.7l-11 11-5-5L6.7 10l2.6 2.6L18.9 3.1z"/></svg></span><p>Possibilité de former votre équipe à la prise en main.</p></li>
-            </ul>
-          </div>
+          <div class="card reveal"><h3>Site vitrine</h3><p>Être trouvé et contacté. Abonnement ou forfait : on choisit ensemble ce qui vous arrange.</p></div>
+          <div class="card reveal"><h3>Projet sur mesure</h3><p>E‑commerce, CRM, espace client, intégrations IA… Proposition après un court appel.</p></div>
         </div>
       </div>
     </section>
 
-    <!-- ================= EXEMPLES ================= -->
     <section id="exemples">
       <div class="wrap">
-        <h2 class="reveal">Exemples & démos</h2>
-        <p class="reveal">Quelques aperçus (on vous en montre plus à l’appel). Les visuels ci‑dessous sont cliquables : remplacez par vos captures réelles.</p>
+        <h2 class="reveal">Exemples</h2>
         <div class="gallery reveal" style="margin-top:10px">
           <div class="rail" id="rail-ex">
             <a class="mock" href="#" aria-label="Exemple 1"></a>
             <a class="mock" href="#" aria-label="Exemple 2"></a>
             <a class="mock" href="#" aria-label="Exemple 3"></a>
-            <a class="mock" href="#" aria-label="Exemple 4"></a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ================= AVIS ================= -->
-    <section id="avis">
-      <div class="wrap two">
-        <div class="reveal">
-          <h2>Ils en parlent le mieux</h2>
-          <p>Vrais retours de clients (freelances, commerces, salles de sport, domaines, etc.).</p>
-          <div class="quote card">
-            <div class="stars">★★★★★</div>
-            <p>« Site livré vite, propre, et surtout on a eu des demandes dès la première semaine. »</p>
-            <span class="author">— Prénom N., gérant</span>
-          </div>
-          <div class="quote card">
-            <div class="stars">★★★★★</div>
-            <p>« J’avais peur de perdre du temps ; au final j’ai juste envoyé mes textes et photos, et tout était en ligne. »</p>
-            <span class="author">— Prénom F., indépendante</span>
-          </div>
-        </div>
-        <div class="reveal">
-          <div class="card">
-            <h3>Avant / Après (résumé)</h3>
-            <ul class="list">
-              <li><span class="tick"><svg viewBox="0 0 24 24"><path d="M20.3 5.7l-11 11-5-5L6.7 10l2.6 2.6L18.9 3.1z"/></svg></span><p>Avant : pas de site ou site confus → Après : message clair en 5 secondes.</p></li>
-              <li><span class="tick"><svg viewBox="0 0 24 24"><path d="M20.3 5.7l-11 11-5-5L6.7 10l2.6 2.6L18.9 3.1z"/></svg></span><p>Avant : contacts éparpillés → Après : un bouton évident pour vous joindre.</p></li>
-              <li><span class="tick"><svg viewBox="0 0 24 24"><path d="M20.3 5.7l-11 11-5-5L6.7 10l2.6 2.6L18.9 3.1z"/></svg></span><p>Avant : lent sur mobile → Après : rapide, lisible, indexé.</p></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= PROCESS ================= -->
     <section id="process">
       <div class="wrap">
-        <h2 class="reveal">Comment ça se passe ?</h2>
+        <h2 class="reveal">Étapes</h2>
         <div class="steps">
-          <div class="step reveal"><div class="n">1</div><h3>Appel</h3><p>On clarifie votre besoin et l’objectif attendu.</p></div>
-          <div class="step reveal"><div class="n">2</div><h3>Brief</h3><p>Vous envoyez textes + logos + photos (ou on peut vous aider en option).</p></div>
-          <div class="step reveal"><div class="n">3</div><h3>Maquette</h3><p>Premier rendu sous 72h pour valider l’axe.</p></div>
-          <div class="step reveal"><div class="n">4</div><h3>Mise en ligne</h3><p>Site prêt en 1 semaine <strong>ou gratuit*</strong> si tout est fourni à temps.</p></div>
-          <div class="step reveal"><div class="n">5</div><h3>Suivi</h3><p>On ajuste selon vos retours et on fait évoluer.</p></div>
+          <div class="step reveal"><div class="n">1</div><h3>Appel</h3><p>On cible le besoin.</p></div>
+          <div class="step reveal"><div class="n">2</div><h3>Brief</h3><p>Textes + logos + photos.</p></div>
+          <div class="step reveal"><div class="n">3</div><h3>Maquette</h3><p>72h pour valider.</p></div>
+          <div class="step reveal"><div class="n">4</div><h3>Mise en ligne</h3><p>1 semaine ou gratuit*.</p></div>
+          <div class="step reveal"><div class="n">5</div><h3>Suivi</h3><p>On ajuste.</p></div>
         </div>
       </div>
     </section>
 
-    <!-- ================= FAQ ================= -->
     <section id="faq">
       <div class="wrap">
-        <h2 class="reveal">Questions fréquentes</h2>
+        <h2 class="reveal">FAQ</h2>
         <div class="faq">
-          <details class="reveal"><summary><strong>Puis‑je payer en une fois ou au mois ?</strong></summary><p>On s’adapte. Pour un vitrine : possible en abonnement ou en forfait. Pour un projet plus technique : chiffrage sur cahier des charges.</p></details>
-          <details class="reveal"><summary><strong>Qui s’occupe des textes et des photos ?</strong></summary><p>Soit vous nous fournissez vos contenus, soit on vous aide (rédaction, reportage photo/vidéo) en option. Ces contenus vous appartiennent et servent aussi pour vos autres canaux.</p></details>
-          <details class="reveal"><summary><strong>Puis‑je migrer plus tard ?</strong></summary><p>Oui. Vous gardez vos contenus et votre nom de domaine. On accompagne la migration si nécessaire.</p></details>
-          <details class="reveal"><summary><strong>Faites‑vous aussi des projets complexes ?</strong></summary><p>Oui : e‑commerce, CRM, espace client, automatisations, intégrations IA… On mobilise nos partenaires experts quand c’est pertinent.</p></details>
-          <details class="reveal"><summary><strong>Et le référencement ?</strong></summary><p>On pose une base technique propre (balises, performance, mobile). Ensuite on peut enrichir (contenus, maillage, fiches locales…).</p></details>
+          <details class="reveal"><summary><strong>Paiement ?</strong></summary><p>Possible en abonnement ou en forfait. Pour les projets techniques : chiffrage sur cahier des charges.</p></details>
+          <details class="reveal"><summary><strong>Contenus ?</strong></summary><p>Vous fournissez vos textes et visuels, ou on vous aide en option. Vous en gardez la propriété.</p></details>
+          <details class="reveal"><summary><strong>Migration ?</strong></summary><p>Oui. Vous gardez nom de domaine et contenus. On accompagne la bascule.</p></details>
         </div>
       </div>
     </section>
 
-    <!-- ================= CONTACT ================= -->
     <section id="contact">
-      <div class="wrap cta">
-        <div class="bubble reveal">
+      <div class="wrap" style="display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center">
+        <div class="reveal">
           <h2>Parlons de votre projet</h2>
-          <p>Expliquez-nous en 2 minutes ce que vous voulez obtenir. On vous répond <strong>rapidement</strong> (vous ne perdez pas de temps, nous non plus).
-          </p>
-          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:10px">
-            <a class="btn" href="tel:+33767197467">Appeler maintenant</a>
-            <a class="btn secondary" href="mailto:contact@cazacomm.fr?subject=Projet%20site%20web">Écrire un email</a>
-          </div>
-          <p class="note" style="margin-top:8px">Ou laissez‑nous un DM :</p>
-          <div class="social" style="margin-top:6px">
-            <a aria-label="Instagram" href="https://instagram.com/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="22" height="22" fill="#cbd5e1"><path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm0 2a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3H7zm5 3a5 5 0 110 10 5 5 0 010-10zm0 2.2a2.8 2.8 0 100 5.6 2.8 2.8 0 000-5.6zM18.3 6.2a1 1 0 110 2 1 1 0 010-2z"/></svg></a>
-            <a aria-label="Facebook" href="https://facebook.com/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="22" height="22" fill="#cbd5e1"><path d="M13 9h3V6h-3c-1.7 0-3 1.3-3 3v2H8v3h2v7h3v-7h2.6l.4-3H13V9z"/></svg></a>
-            <a aria-label="TikTok" href="https://tiktok.com/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="22" height="22" fill="#cbd5e1"><path d="M16 3a6 6 0 006 6v3a9 9 0 01-6-2.3V15a6 6 0 11-9-5.2V13a3 3 0 103 3V3h3z"/></svg></a>
-          </div>
+          <p>Expliquez votre objectif en 2 minutes. On vous répond vite.</p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:10px"><a class="btn" href="tel:+33767197467">Appeler</a><a class="link" href="mailto:contact@cazacomm.fr?subject=Projet%20site%20web">Écrire un email</a></div>
         </div>
         <div class="reveal">
-          <div class="card" style="display:grid;gap:10px">
-            <h3>Ce que vous obtenez</h3>
-            <ul class="list">
-              <li><span class="tick"><svg viewBox="0 0 24 24"><path d="M20.3 5.7l-11 11-5-5L6.7 10l2.6 2.6L18.9 3.1z"/></svg></span><p>Un site clair, rapide et crédible qui donne envie d’agir.</p></li>
-              <li><span class="tick"><svg viewBox="0 0 24 24"><path d="M20.3 5.7l-11 11-5-5L6.7 10l2.6 2.6L18.9 3.1z"/></svg></span><p>Une base SEO propre et des fondations solides.</p></li>
-              <li><span class="tick"><svg viewBox="0 0 24 24"><path d="M20.3 5.7l-11 11-5-5L6.7 10l2.6 2.6L18.9 3.1z"/></svg></span><p>Un interlocuteur réactif pour suivre et faire évoluer.</p></li>
-            </ul>
-          </div>
+          <div class="card"><h3>Coordonnées</h3><p>contact@cazacomm.fr • +33 7 67 19 74 67</p><p>Instagram • Facebook • TikTok</p></div>
         </div>
       </div>
     </section>
@@ -357,27 +143,6 @@
     </div>
   </footer>
 
-  <script>
-    // Burger simple
-    const burger=document.querySelector('.burger');
-    const menu=document.getElementById('menu');
-    burger?.addEventListener('click',()=>{const open=burger.getAttribute('aria-expanded')==='true';burger.setAttribute('aria-expanded',String(!open));menu.style.display=open?'none':'flex';menu.style.flexDirection='column';menu.style.gap='10px'});
-
-    // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const id=a.getAttribute('href');if(!id||id==='#')return;const el=document.querySelector(id);if(el){e.preventDefault();el.scrollIntoView({behavior:'smooth',block:'start'});}}));
-
-    // Reveal on scroll
-    const io=new IntersectionObserver((entries)=>{entries.forEach(en=>{if(en.isIntersecting){en.target.classList.add('on');io.unobserve(en.target);}})},{threshold:.15});
-    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-
-    // Odometers (simple counters)
-    const ods=document.querySelectorAll('.od');
-    const run=(el)=>{const t=+el.dataset.target||0;let n=0;const step=Math.max(1,Math.round(t/60));const tick=()=>{n+=step;if(n>=t){el.textContent=t;return}el.textContent=n;requestAnimationFrame(tick)};tick()};
-    const io2=new IntersectionObserver((ents)=>{ents.forEach(e=>{if(e.isIntersecting){run(e.target);io2.unobserve(e.target);}})},{threshold:.6});
-    ods.forEach(o=>io2.observe(o));
-
-    // Year
-    document.getElementById('y').textContent=new Date().getFullYear();
-  </script>
+  <script>const burger=document.querySelector('.burger');const menu=document.getElementById('menu');burger?.addEventListener('click',()=>{const open=burger.getAttribute('aria-expanded')==='true';burger.setAttribute('aria-expanded',String(!open));menu.style.display=open?'none':'flex';menu.style.flexDirection='column';menu.style.gap='10px'});document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const id=a.getAttribute('href');if(!id||id==='#')return;const el=document.querySelector(id);if(el){e.preventDefault();el.scrollIntoView({behavior:'smooth',block:'start'});}}));const io=new IntersectionObserver((entries)=>{entries.forEach(en=>{if(en.isIntersecting){en.target.classList.add('on');io.unobserve(en.target);}})},{threshold:.15});document.querySelectorAll('.reveal').forEach(el=>io.observe(el));document.getElementById('y').textContent=new Date().getFullYear();</script>
 </body>
 </html>
