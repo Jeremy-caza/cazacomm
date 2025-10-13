@@ -126,25 +126,23 @@
     /* === AJOUT: taille raisonnable du logo hero === */
     .hero-logo{width:64px;height:64px;object-fit:contain;border-radius:12px;border:1px solid var(--line);background:#0f172a;display:block;margin:0 0 12px 0}
 
-    /* === Avis Google : fond blanc, auteur bleu, logo image === */
+    /* === Avis Google : style proche Google Reviews === */
     .reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:10px}
-    .review-card{background:#ffffff;border:1px solid #e5e7eb;border-radius:16px;padding:16px;display:grid;gap:8px;color:#111827}
-    .review-head{display:flex;align-items:center;gap:10px}
+    .review-card{background:#ffffff;border:1px solid #e5e7eb;border-radius:16px;padding:16px;display:grid;gap:10px;color:#111827;box-shadow:0 1px 2px rgba(60,64,67,.15)}
+    .review-head{display:flex;align-items:center;gap:8px;margin-bottom:2px}
     .glogo{width:22px;height:22px;border-radius:50%}
-    .stars{display:inline-flex;gap:2px;margin-left:auto}
+    .brand{color:#202124;font-weight:700}
+    .verified{margin-left:4px;display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:50%;background:#1a73e8;color:#fff;font-size:12px;line-height:1}
+    .meta{display:flex;align-items:center;gap:10px}
+    .stars{display:inline-flex;gap:2px}
     .stars svg{width:14px;height:14px;fill:#fbbc04}
-    .author{color:#1a73e8;font-size:14px;font-weight:600}
+    .time{color:#5f6368;font-size:12px}
+    .pill{font-size:11px;font-weight:700;border:1px solid #dadce0;border-radius:999px;padding:2px 6px;color:#1f2937;background:#f8fafc}
+    .author{color:#1a73e8;font-size:14px;font-weight:700}
+    .text{color:#3c4043}
+    .visit{color:#5f6368;font-size:12px}
     @media (max-width:980px){.reviews{grid-template-columns:1fr 1fr}}
     @media (max-width:620px){.reviews{grid-template-columns:1fr}}
-  .legal{display:flex;gap:8px;flex-wrap:wrap;margin-left:0}
-    .legal a{color:#9fb2c4;text-decoration:none}
-    .legal a:hover{text-decoration:underline}
-
-    /* Raffinage design avis type Google */
-    .review-card{box-shadow:0 1px 2px rgba(60,64,67,.15)}
-    .review-head strong{color:#202124}
-    .review-card p{color:#3c4043}
-    .author{color:#1a73e8;font-weight:600;margin-top:6px}
   .break{display:block}
     .arrow{font-size:1.15em;line-height:0;vertical-align:-2px;margin-right:8px;color:var(--brand-2)}
     .n{background:var(--brand-2);color:#041016;border:0}
@@ -220,8 +218,9 @@
           <article class="review-card reveal">
             <div class="review-head">
               <img class="glogo" src="images/google-logo.png" alt="Google" width="22" height="22" loading="lazy" />
-              <strong>Google</strong>
-              <span class="stars" aria-label="5 sur 5">
+              <strong class="brand">Google</strong>
+              <span class="verified" title="Vérifié" aria-label="Vérifié">✓</span>
+              <span class="stars" aria-label="5 sur 5" style="margin-left:auto">
                 <svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.8-7.1L2 9.6l7.3-.6L12 2l2.7 7 7.3.6-5.6 4.3 1.8 7.1z"/></svg>
                 <svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.8-7.1L2 9.6l7.3-.6L12 2l2.7 7 7.3.6-5.6 4.3 1.8 7.1z"/></svg>
                 <svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.8-7.1L2 9.6l7.3-.6L12 2l2.7 7 7.3.6-5.6 4.3 1.8 7.1z"/></svg>
@@ -229,14 +228,17 @@
                 <svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.8-7.1L2 9.6l7.3-.6L12 2l2.7 7 7.3.6-5.6 4.3 1.8 7.1z"/></svg>
               </span>
             </div>
-            <p>« Super réactifs. Site en ligne en quelques jours et déjà des demandes. »</p>
-            <div class="author">Nom Prénom</div>
+            <div class="meta"><span class="author">Nom Prénom</span><span class="time">· il y a 1&nbsp;heure</span><span class="pill">NOUVEAU</span></div>
+            <p class="text">« Super réactifs. Site en ligne en quelques jours et déjà des demandes. »</p>
+            <div class="visit">Visité en octobre</div>
           </article>
+
           <article class="review-card reveal">
             <div class="review-head">
               <img class="glogo" src="images/google-logo.png" alt="Google" width="22" height="22" loading="lazy" />
-              <strong>Google</strong>
-              <span class="stars" aria-label="5 sur 5">
+              <strong class="brand">Google</strong>
+              <span class="verified" title="Vérifié" aria-label="Vérifié">✓</span>
+              <span class="stars" aria-label="5 sur 5" style="margin-left:auto">
                 <svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.8-7.1L2 9.6l7.3-.6L12 2l2.7 7 7.3.6-5.6 4.3 1.8 7.1z"/></svg>
                 <svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.8-7.1L2 9.6l7.3-.6L12 2l2.7 7 7.3.6-5.6 4.3 1.8 7.1z"/></svg>
                 <svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.8-7.1L2 9.6l7.3-.6L12 2l2.7 7 7.3.6-5.6 4.3 1.8 7.1z"/></svg>
@@ -244,14 +246,17 @@
                 <svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.8-7.1L2 9.6l7.3-.6L12 2l2.7 7 7.3.6-5.6 4.3 1.8 7.1z"/></svg>
               </span>
             </div>
-            <p>« J’ai juste envoyé mes textes et photos. Résultat pro, rapide. »</p>
-            <div class="author">Nom Prénom</div>
+            <div class="meta"><span class="author">Nom Prénom</span><span class="time">· il y a 3&nbsp;jours</span></div>
+            <p class="text">« J’ai juste envoyé mes textes et photos. Résultat pro, rapide. »</p>
+            <div class="visit">Visité en septembre</div>
           </article>
+
           <article class="review-card reveal">
             <div class="review-head">
               <img class="glogo" src="images/google-logo.png" alt="Google" width="22" height="22" loading="lazy" />
-              <strong>Google</strong>
-              <span class="stars" aria-label="5 sur 5">
+              <strong class="brand">Google</strong>
+              <span class="verified" title="Vérifié" aria-label="Vérifié">✓</span>
+              <span class="stars" aria-label="5 sur 5" style="margin-left:auto">
                 <svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.8-7.1L2 9.6l7.3-.6L12 2l2.7 7 7.3.6-5.6 4.3 1.8 7.1z"/></svg>
                 <svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.8-7.1L2 9.6l7.3-.6L12 2l2.7 7 7.3.6-5.6 4.3 1.8 7.1z"/></svg>
                 <svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.8-7.1L2 9.6l7.3-.6L12 2l2.7 7 7.3.6-5.6 4.3 1.8 7.1z"/></svg>
@@ -259,8 +264,9 @@
                 <svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.8-7.1L2 9.6l7.3-.6L12 2l2.7 7 7.3.6-5.6 4.3 1.8 7.1z"/></svg>
               </span>
             </div>
-            <p>« On a gagné en crédibilité et en demandes qualifiées. »</p>
-            <div class="author">Nom Prénom</div>
+            <div class="meta"><span class="author">Nom Prénom</span><span class="time">· il y a 2&nbsp;semaines</span></div>
+            <p class="text">« On a gagné en crédibilité et en demandes qualifiées. »</p>
+            <div class="visit">Visité en août</div>
           </article>
         </div>
       </div>
