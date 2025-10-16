@@ -76,10 +76,12 @@
   </script>
 
   <style>
-    *,*::before,*::after{box-sizing:border-box}
+    *,*::before,*::after{box-sizing:border-box;min-width:0}
     :root{--bg:radial-gradient(1200px 800px at 10% -10%,rgba(34,211,238,.10),transparent 60%),radial-gradient(900px 600px at 100% 0,rgba(18,183,106,.12),transparent 55%),#0b1220;--text:#e5e7eb;--muted:#9aa3b2;--line:#22314b;--brand:#12b76a;--brand-2:#0ea46d;--card:#0f172a;--max:1200px}
-    html,body{height:100%}
+    html,body{height:100%;overflow-x:hidden}
     body{margin:0;background:var(--bg);color:var(--text);font:400 16px/1.6 Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;letter-spacing:.1px}
+    img,iframe,svg,video{max-width:100%;height:auto;display:block}
+
     h1,h2,h3{margin:0 0 12px;color:#fff;font-weight:700}
     h1{font-size:clamp(34px,5vw,56px);line-height:1.05}
     h2{font-size:clamp(26px,3.5vw,36px)}
@@ -90,49 +92,45 @@
     .wrap{width:min(var(--max),92%);margin-inline:auto}
     .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 16px;border-radius:12px;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#041016;font-weight:700;border:1px solid transparent;transition:.2s transform,.2s box-shadow}
     .btn:hover{transform:translateY(-1px);box-shadow:0 10px 24px rgba(18,183,106,.25)}
+    .btn-sm{padding:10px 12px;border-radius:10px;font-weight:800}
     .link{display:inline-flex;align-items:center;font-weight:600;border-bottom:1px solid transparent}
     .link:hover{border-color:#475569}
+
     header{position:sticky;top:0;z-index:40;background:linear-gradient(to bottom,rgba(11,18,32,.95),rgba(11,18,32,.82));border-bottom:1px solid var(--line);backdrop-filter:saturate(130%) blur(6px)}
     .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
-    .brand{display:flex;align-items:center;gap:10px;font-weight:800}
-    .brand .logo{width:32px;height:32px;display:grid;place-items:center;border-radius:8px;border:1px solid var(--line);background:#0f172a}
-    .brand .logo svg{width:18px;height:18px;fill:#cbd5e1}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:900}
+    .brand .logo{display:none} /* retire l'icône maison */
+    .brand span{color:var(--brand-2)} /* Caza Comm en vert */
+
     nav ul{display:flex;gap:18px;list-style:none;padding:0;margin:0}
     nav a{padding:8px 10px;border-radius:10px;color:#cbd5e1}
     nav a:hover{background:rgba(148,163,184,.12)}
     .burger{display:none;border:1px solid var(--line);background:#0f172a;border-radius:10px;padding:8px}
     .burger svg{width:20px;height:20px;fill:#cbd5e1}
+
     .hero{padding:110px 0 64px;border-top:0}
-    .grid-hero{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center}
+    .grid-hero{display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:center}
     .sub{font-size:18px;color:var(--muted)}
     .fine{font-size:14px;color:#91a4b7}
-    .hero-visual{border:1px solid var(--line);border-radius:16px;min-height:260px;background:#0f172a;color:#9fb2c4;overflow:hidden;padding:0}
+    .hero-visual{border:1px solid var(--line);border-radius:16px;min-height:auto;background:#0f172a;color:#9fb2c4;overflow:hidden;padding:0}
     .hero-visual .ytwrap{width:100%;aspect-ratio:16/9}
     .hero-visual .ytwrap iframe{width:100%;height:100%;border:0;display:block}
+
     section{padding:84px 0;border-top:1px solid var(--line)}
     .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}
-    .tiers{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+
+    /* Étapes = petites cartes responsives */
     .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:10px}
-    .step{padding:16px;border-radius:14px;border:1px solid var(--line);background:var(--card)}
-    .n{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:7px;background:#0f172a;color:#e5e7eb;font-weight:800;margin-bottom:6px;border:1px solid var(--line)}
-    .faq{display:grid;gap:10px}
-    details{border:1px solid var(--line);border-radius:14px;padding:12px 14px;background:var(--card);color:var(--text)}
-    details>summary{cursor:pointer;list-style:none}
-    footer{padding:28px 0;border-top:1px solid var(--line);color:#9fb2c4;background:#0b1220}
-    .foot{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between}
-    .social{display:flex;gap:12px;align-items:center}
-    .social a{display:grid;place-items:center;width:38px;height:38px;border-radius:10px;border:1px solid var(--line);background:#0f172a}
+    .step{padding:16px;border-radius:14px;border:1px solid var(--line);background:var(--card);height:100%}
+    .n{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:7px;background:var(--brand-2);color:#041016;font-weight:800;margin-bottom:6px;border:0}
 
-    /* === AJOUT: taille raisonnable du logo hero === */
-    .hero-logo{width:64px;height:64px;object-fit:contain;border-radius:12px;border:1px solid var(--line);background:#0f172a;display:block;margin:0 0 12px 0}
-
-    /* === Avis Google : style proche Google Reviews === */
+    /* Avis Google */
     .reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:10px}
     .review-card{background:#ffffff;border:1px solid #e5e7eb;border-radius:16px;padding:16px;display:grid;gap:10px;color:#111827;box-shadow:0 1px 2px rgba(60,64,67,.15)}
     .review-head{display:flex;align-items:center;gap:8px;margin-bottom:2px}
     .glogo{width:22px;height:22px;border-radius:50%}
     .brand{color:#202124;font-weight:700}
-    .verified{margin-left:4px;display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:50%;background:#1a73e8;color:#fff;font-size:12px;line-height:1}
+    .verified-img{margin-left:4px;display:inline-block;width:18px;height:18px;vertical-align:middle;object-fit:contain}
     .meta{display:flex;align-items:center;gap:10px}
     .stars{display:inline-flex;gap:2px}
     .stars svg{width:14px;height:14px;fill:#fbbc04}
@@ -141,11 +139,42 @@
     .author{color:#1a73e8;font-size:14px;font-weight:700}
     .text{color:#3c4043}
     .visit{color:#5f6368;font-size:12px}
-    @media (max-width:980px){.reviews{grid-template-columns:1fr 1fr}}
-    @media (max-width:620px){.reviews{grid-template-columns:1fr}}
-  .break{display:block}
+
+    /* Deux façons d’avancer : photo fondateur sticky à gauche */
+    .advancer{display:grid;grid-template-columns:340px 1fr;gap:24px;margin-top:16px}
+    .founder{position:sticky;top:96px;align-self:start}
+    .founder-img{width:100%;aspect-ratio:3/4;border-radius:18px;border:1px solid var(--line);background:#0f172a url('/images/founder.jpeg') center/cover no-repeat;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+    .founder-caption{display:block;color:#9fb2c4;margin-top:8px}
+    .options{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+
+    footer{padding:28px 0;border-top:1px solid var(--line);color:#9fb2c4;background:#0b1220}
+    .foot{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between}
+    .social{display:flex;gap:12px;align-items:center}
+    .social a{display:grid;place-items:center;width:38px;height:38px;border-radius:10px;border:1px solid var(--line);background:#0f172a}
+
+    .hero-logo{width:64px;height:64px;object-fit:contain;border-radius:12px;border:1px solid var(--line);background:#0f172a;display:block;margin:0 0 12px 0}
+    .break{display:block}
     .arrow{font-size:1.15em;line-height:0;vertical-align:-2px;margin-right:8px;color:var(--brand-2)}
-    .n{background:var(--brand-2);color:#041016;border:0}
+
+    /* Nav : CTA visible desktop seulement */
+    .hide-mobile{display:none}
+
+    /* Media queries */
+    @media(max-width:1200px){.steps{grid-template-columns:repeat(3,1fr)}}
+    @media(max-width:980px){
+      .grid-hero{grid-template-columns:1fr;gap:22px}
+      .burger{display:inline-grid}
+      nav ul{display:none;position:absolute;right:4%;top:58px;z-index:50;background:#0f172a;border:1px solid var(--line);border-radius:12px;padding:12px}
+      nav ul li a{display:block;padding:10px 12px}
+      .advancer{grid-template-columns:1fr}
+      .options{grid-template-columns:1fr}
+      .founder{position:relative;top:auto}
+      .hide-mobile{display:none}
+    }
+    @media(min-width:981px){.hide-mobile{display:block}}
+    @media(max-width:760px){.steps{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:620px){.reviews{grid-template-columns:1fr}}
+    @media(max-width:520px){section{padding:64px 0} .hero{padding:84px 0 48px}}
   </style>
 </head>
 <body>
@@ -166,6 +195,7 @@
           <li><a href="#process">Étapes</a></li>
           <li><a href="#faq">FAQ</a></li>
           <li><a href="#contact">Contact</a></li>
+          <li class="hide-mobile"><a href="#rdv" class="btn btn-sm">Prendre RDV</a></li>
         </ul>
       </nav>
     </div>
@@ -187,12 +217,22 @@
       </div>
     </section>
 
+    <!-- OFFRES : photo fondateur sticky + 2 cartes -->
     <section id="offres">
       <div class="wrap">
         <h2 class="reveal">Deux façons d’avancer</h2>
-        <div class="tiers" style="margin-top:16px">
-          <div class="card reveal"><h3>Site vitrine</h3><p><span class="arrow">➜</span>Être trouvé, être contacté et <strong>convertir.</strong></p></div>
-          <div class="card reveal"><h3>Projet sur mesure</h3><p><span class="arrow">➜</span>E-commerce, CRM, espace client, IA… <strong>bâtir une marque.</strong></p></div>
+
+        <div class="advancer">
+          <aside class="founder reveal" aria-label="Fondateur">
+            <!-- Remplace /images/founder.jpg par ta photo -->
+            <div class="founder-img" role="img" aria-label="Jérémy – Caza Comm"></div>
+            <small class="founder-caption">Un interlocuteur dédié, réactif, focus résultats.</small>
+          </aside>
+
+          <div class="options">
+            <div class="card reveal"><h3>Site vitrine</h3><p><span class="arrow">➜</span>Être trouvé, être contacté et <strong>convertir</strong>.</p><a href="#rdv" class="btn" style="margin-top:10px">Prendre rendez-vous</a></div>
+            <div class="card reveal"><h3>Projet sur mesure</h3><p><span class="arrow">➜</span>E-commerce, CRM, espace client, IA… <strong>bâtir une marque</strong>.</p><a href="#rdv" class="btn" style="margin-top:10px">Parler de mon besoin</a></div>
+          </div>
         </div>
       </div>
     </section>
@@ -219,7 +259,7 @@
             <div class="review-head">
               <img class="glogo" src="images/google-logo.png" alt="Google" width="22" height="22" loading="lazy" />
               <strong class="brand">Google</strong>
-              <span class="verified" title="Vérifié" aria-label="Vérifié">✓</span>
+              <img class="verified-img" src="images/verified.svg" alt="Vérifié" width="18" height="18" loading="lazy" />
               <span class="stars" aria-label="5 sur 5" style="margin-left:auto">
                 <svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.8-7.1L2 9.6l7.3-.6L12 2l2.7 7 7.3.6-5.6 4.3 1.8 7.1z"/></svg>
                 <svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.8-7.1L2 9.6l7.3-.6L12 2l2.7 7 7.3.6-5.6 4.3 1.8 7.1z"/></svg>
@@ -228,8 +268,8 @@
                 <svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.8-7.1L2 9.6l7.3-.6L12 2l2.7 7 7.3.6-5.6 4.3 1.8 7.1z"/></svg>
               </span>
             </div>
-            <div class="meta"><span class="author">Nom Prénom</span><span class="time">· il y a 1&nbsp;heure</span><span class="pill">NOUVEAU</span></div>
-            <p class="text">« Super réactifs. Site en ligne en quelques jours et déjà des demandes. »</p>
+            <div class="meta"><span class="author">Athletic Training Performance</span><span class="pill">NOUVEAU</span></div>
+            <p class="text">« Nous souhaitions optimiser notre visibilité sur le plan local, notamment grâce au référencement et à l'optimisation de la page google. Nous voulions également un nouveau site internet. Nous sommes très satisfait de la prestation de Caza Comm... »</p>
             <div class="visit">Visité en octobre</div>
           </article>
 
@@ -237,7 +277,7 @@
             <div class="review-head">
               <img class="glogo" src="images/google-logo.png" alt="Google" width="22" height="22" loading="lazy" />
               <strong class="brand">Google</strong>
-              <span class="verified" title="Vérifié" aria-label="Vérifié">✓</span>
+              <img class="verified-img" src="images/verified.svg" alt="Vérifié" width="18" height="18" loading="lazy" />
               <span class="stars" aria-label="5 sur 5" style="margin-left:auto">
                 <svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.8-7.1L2 9.6l7.3-.6L12 2l2.7 7 7.3.6-5.6 4.3 1.8 7.1z"/></svg>
                 <svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.8-7.1L2 9.6l7.3-.6L12 2l2.7 7 7.3.6-5.6 4.3 1.8 7.1z"/></svg>
@@ -246,8 +286,8 @@
                 <svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.8-7.1L2 9.6l7.3-.6L12 2l2.7 7 7.3.6-5.6 4.3 1.8 7.1z"/></svg>
               </span>
             </div>
-            <div class="meta"><span class="author">Nom Prénom</span><span class="time">· il y a 3&nbsp;jours</span></div>
-            <p class="text">« J’ai juste envoyé mes textes et photos. Résultat pro, rapide. »</p>
+            <div class="meta"><span class="author">JB Decocq</span><span class="time">· il y a 3&nbsp;jours</span></div>
+            <p class="text">« J’ai fais appel à Jeremy pour qu’il m’accompagne, je suis agréablement satisfait par sont écoute car sont engagement en vers moi est à la hauteur de mes attentes... »</p>
             <div class="visit">Visité en septembre</div>
           </article>
 
@@ -255,7 +295,7 @@
             <div class="review-head">
               <img class="glogo" src="images/google-logo.png" alt="Google" width="22" height="22" loading="lazy" />
               <strong class="brand">Google</strong>
-              <span class="verified" title="Vérifié" aria-label="Vérifié">✓</span>
+              <img class="verified-img" src="images/verified.svg" alt="Vérifié" width="18" height="18" loading="lazy" />
               <span class="stars" aria-label="5 sur 5" style="margin-left:auto">
                 <svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.8-7.1L2 9.6l7.3-.6L12 2l2.7 7 7.3.6-5.6 4.3 1.8 7.1z"/></svg>
                 <svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.8-7.1L2 9.6l7.3-.6L12 2l2.7 7 7.3.6-5.6 4.3 1.8 7.1z"/></svg>
@@ -264,9 +304,9 @@
                 <svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.8-7.1L2 9.6l7.3-.6L12 2l2.7 7 7.3.6-5.6 4.3 1.8 7.1z"/></svg>
               </span>
             </div>
-            <div class="meta"><span class="author">Nom Prénom</span><span class="time">· il y a 2&nbsp;semaines</span></div>
-            <p class="text">« On a gagné en crédibilité et en demandes qualifiées. »</p>
-            <div class="visit">Visité en août</div>
+            <div class="meta"><span class="author">Sandrine Scano</span><span class="time">· il y a 2&nbsp;semaines</span></div>
+            <p class="text">« Merci pour ton professionnalisme et ton savoir-faire ! »</p>
+            <div class="visit">Visité en octobre</div>
           </article>
         </div>
       </div>
@@ -280,6 +320,17 @@
           <details class="reveal"><summary><strong>En combien de temps pouvez-vous livrer mon site ?</strong></summary><p>Site vitrine livré en 7 jours ouvrés ou c’est offert (si vous nous fournissez logo/histoire/photos dès le départ). Process clair : brief → maquette → intégration → mise en ligne + check mobile/SEO.</p></details>
           <details class="reveal"><summary><strong>Abonnement ou paiement une fois ?</strong></summary><p>Notre formule préférée : l’abonnement tout-inclus (hébergement, maintenance, petites évolutions, support). Achat possible si vous préférez le paiement unique ; on propose alors un pack maintenance en option.</p></details>
           <details class="reveal"><summary><strong>Qu’est-ce qui est inclus après la mise en ligne ?</strong></summary><p>Maintenance, sécurité, sauvegardes, mises à jour, SEO de base, reporting simple, réponses sous 24 h ouvrées, et évolutions incluses dans l’abonnement.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA RDV central avec ancre -->
+    <section id="rdv">
+      <div class="wrap" style="text-align:center">
+        <h2 class="reveal">Se rencontrer</h2>
+        <p class="reveal">Choisissez un créneau : on clarifie votre besoin et on vous conseille.</p>
+        <div class="reveal" style="margin-top:12px">
+          <a class="btn" href="https://calendly.com/" target="_blank" rel="noopener">Prendre rendez-vous</a>
         </div>
       </div>
     </section>
@@ -310,11 +361,8 @@
         <a href="/conditions.html">Conditions d’utilisation</a>
       </small>
       <div class="social">
-        <!-- Remplacer par vos vrais comptes si besoin -->
         <a aria-label="Instagram" href="https://www.instagram.com/cazacomm/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="#cbd5e1"><path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm0 2a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3H7zm5 3a5 5 0 110 10 5 5 0 010-10zm0 2.2a2.8 2.8 0 100 5.6 2.8 2.8 0 000-5.6z"/></svg></a>
         <a aria-label="YouTube" href="https://www.youtube.com/channel/UCdzr7erXZAYfKl6wciD3bSA" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="#cbd5e1"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.7 3.6 12 3.6 12 3.6s-7.7 0-9.4.5A3 3 0 00.5 6.2 31.7 31.7 0 000 12a31.7 31.7 0 00.5 5.8 3 3 0 002.1 2.1c1.7.5 9.4.5 9.4.5s7.7 0 9.4-.5a3 3 0 002.1-2.1A31.7 31.7 0 0024 12a31.7 31.7 0 00-.5-5.8zM9.8 15.5V8.5l6.4 3.5-6.4 3.5z"/></svg></a>
-       <!-- Liens légaux -->
-        
       </div>
     </div>
   </footer>
@@ -323,7 +371,7 @@
     const burger=document.querySelector('.burger');
     const menu=document.getElementById('menu');
     burger?.addEventListener('click',()=>{const open=burger.getAttribute('aria-expanded')==='true';burger.setAttribute('aria-expanded',String(!open));menu.style.display=open?'none':'flex';menu.style.flexDirection='column';menu.style.gap='10px'});
-    document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const id=a.getAttribute('href');if(!id||id==='#')return;const el=document.querySelector(id);if(el){e.preventDefault();el.scrollIntoView({behavior:'smooth',block:'start'});}}));
+    document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const id=a.getAttribute('href');if(!id||id==='#')return;const el=document.querySelector(id);if(el){e.preventDefault();el.scrollIntoView({behavior:'smooth',block:'start'});if(window.innerWidth<981){menu.style.display='none';burger.setAttribute('aria-expanded','false');}}}));
     const io=new IntersectionObserver((entries)=>{entries.forEach(en=>{if(en.isIntersecting){en.target.classList.add('on');io.unobserve(en.target);}})},{threshold:.15});
     document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
     document.getElementById('y').textContent=new Date().getFullYear();
