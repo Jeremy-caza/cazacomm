@@ -36,17 +36,31 @@
     .cta:hover{transform:translateY(-1px);box-shadow:0 10px 25px -10px var(--ring)}
     .mobile-toggle{display:none;border:1px solid rgba(0,0,0,.08);padding:8px 12px;border-radius:10px;background:#fff}
 
-    /* ===== Héros (parallaxe) ===== */
-    .hero{position:relative;min-height:86vh;display:grid;place-items:center;color:#fff;background:#0e1713}
-    .hero::before{content:"";position:absolute;inset:0;background:url('(Image de fond Accueil)') center/cover no-repeat fixed;opacity:.38}
-    .hero::after{content:"";position:absolute;inset:0;background:radial-gradient(60% 60% at 50% 50%,rgba(22,193,114,.35),transparent 60%),linear-gradient(to bottom,rgba(0,0,0,.35),rgba(0,0,0,.65))}
-    .hero-inner{position:relative;max-width:1100px;margin:auto;padding:120px 20px 80px;text-align:center}
-    .hero h1{font-size:clamp(2rem,4vw,3.2rem);margin:0 0 12px;font-weight:900;letter-spacing:.3px}
-    .hero p{max-width:800px;margin:0 auto 24px;font-size:clamp(1rem,1.4vw,1.2rem);opacity:.95}
-    .hero .actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-    .ghost{padding:10px 16px;border-radius:999px;border:1.5px solid rgba(255,255,255,.7);color:#fff}
-    .ghost:hover{background:rgba(255,255,255,.1)}
-    .badge{display:inline-flex;align-items:center;gap:8px;background:rgba(22,193,114,.15);border:1px solid rgba(22,193,114,.35);color:#d1fae5;padding:6px 12px;border-radius:999px;margin-bottom:14px;font-weight:700}
+   /* ===== Héros (parallaxe) — FIX overlay + clics ===== */
+.hero{position:relative;min-height:86vh;display:grid;place-items:center;color:#fff;background:#0e1713;overflow:hidden}
+.hero::before,
+.hero::after{
+  content:"";position:absolute;inset:0;pointer-events:none; /* <-- ne bloque plus les clics */
+  z-index:0; /* <-- passe derrière le contenu */
+}
+.hero::before{
+  background:url('(Image de fond Accueil)') center/cover no-repeat fixed;
+  opacity:.42; /* tu peux ajuster .30–.45 */
+}
+.hero::after{
+  /* éclairci fortement l’overlay */
+  background:
+    radial-gradient(60% 60% at 50% 50%, rgba(22,193,114,.22), transparent 60%),
+    linear-gradient(to bottom, rgba(0,0,0,.15), rgba(0,0,0,.35)); /* <-- moins sombre */
+  mix-blend-mode:normal;
+}
+.hero-inner{position:relative;z-index:1; /* <-- contenu au-dessus, cliquable */ 
+  max-width:1100px;margin:auto;padding:120px 20px 80px;text-align:center}
+.hero h1{font-size:clamp(2rem,4vw,3.2rem);margin:0 0 12px;font-weight:900;letter-spacing:.3px}
+.hero p{max-width:800px;margin:0 auto 24px;font-size:clamp(1rem,1.4vw,1.2rem);opacity:.95}
+.hero .actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.badge{display:inline-flex;align-items:center;gap:8px;background:rgba(22,193,114,.15);
+  border:1px solid rgba(22,193,114,.35);color:#d1fae5;padding:6px 12px;border-radius:999px;margin-bottom:14px;font-weight:700}
 
     /* ===== Section wrapper ===== */
     .section{max-width:1200px;margin:auto;padding:72px 20px}
@@ -342,7 +356,6 @@
     setInterval(()=>go('next'), 6000);
 
     // Parallaxe de fond (fallback si background-attachment: fixed n'est pas fluide)
-    const hero=document.querySelector('.hero::before'); // (CSS pseudo) — pour JS, on applique un léger translateY sur .hero-inner
     const heroInner=document.querySelector('.hero .hero-inner');
     window.addEventListener('scroll',()=>{const y=window.scrollY; heroInner.style.transform=`translateY(${Math.min(30,y*0.08)}px)`;},{passive:true});
   </script>
