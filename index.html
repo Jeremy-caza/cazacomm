@@ -159,6 +159,19 @@
     .foot a{color:#e6fff4}
     .legal{display:flex;gap:14px;flex-wrap:wrap}
     .copy{color:#9aa3ad}
+    
+    /* Icônes réseaux sociaux dans le footer */
+.social{display:flex;align-items:center;gap:14px}
+.social a{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:40px;height:40px;border-radius:999px;
+  background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.15);
+  transition:transform .2s ease, box-shadow .2s ease, background .2s ease
+}
+.social a:hover{transform:translateY(-2px);background:rgba(255,255,255,.12);box-shadow:0 8px 18px -10px rgba(0,0,0,.5)}
+.social img{width:22px;height:22px;display:block}
+@media(max-width:640px){ .social{gap:10px} .social a{width:36px;height:36px} .social img{width:20px;height:20px} }
+
 
     /* ===== Utilities ===== */
     .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease, transform .6s ease}
@@ -410,13 +423,21 @@
         <div class="copy">© <span id="year"></span> Caza Comm — Tous droits réservés.</div>
       </div>
       <div>
-        <div class="legal">
-          <a href="https://cazacomm.fr/mentions.html">Mentions légales</a>
-          <a href="https://www.instagram.com/caza.comm/">Instagram</a>
-          <a href="https://www.youtube.com/@CazaComm">Youtube</a>
-          <a href="mailto:caza.comm@gmail.com">Contact</a>
-        </div>
-      </div>
+  <div class="legal" style="align-items:center;gap:16px">
+    <a href="https://cazacomm.fr/mentions.html">Mentions légales</a>
+    <a href="mailto:caza.comm@gmail.com">Contact</a>
+
+    <!-- Réseaux sociaux (icônes) -->
+    <div class="social" aria-label="Réseaux sociaux">
+      <a href="https://www.instagram.com/caza.comm/" target="_blank" rel="noopener" aria-label="Instagram">
+        <img src="images/IG.png" width="22" height="22" alt="Instagram Caza Comm" loading="lazy" decoding="async">
+      </a>
+      <a href="https://www.youtube.com/@CazaComm" target="_blank" rel="noopener" aria-label="YouTube">
+        <img src="images/YT.png" width="22" height="22" alt="YouTube Caza Comm" loading="lazy" decoding="async">
+      </a>
+    </div>
+  </div>
+</div>
     </div>
   </footer>
 
