@@ -36,241 +36,208 @@
   <!-- ====== Sitemap ====== -->
   <link rel="sitemap" type="application/xml" title="Sitemap" href="https://cazacomm.fr/sitemap.xml" />
 
-  <!-- ====== Données structurées (incluses plus bas dans le body via <script type="application/ld+json">) ====== -->
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@graph":[
-    {
-      "@type":"Organization",
-      "@id":"https://cazacomm.fr/#org",
-      "name":"CAZA COMM",
-      "url":"https://cazacomm.fr/",
-      "logo":"https://cazacomm.fr/assets/logo-512.png",
-      "email":"mailto:caza.comm@gmail.com",
-      "telephone":"+33767197467",
-      "sameAs":[
-        "https://www.instagram.com/caza.comm/",
-        "https://www.youtube.com/@CazaComm"
-      ]
-    },
-    {
-      "@type":"WebSite",
-      "@id":"https://cazacomm.fr/#website",
-      "url":"https://cazacomm.fr/",
-      "name":"CAZA COMM",
-      "publisher":{"@id":"https://cazacomm.fr/#org"},
-      "potentialAction":{
-        "@type":"SearchAction",
-        "target":"https://cazacomm.fr/?s={search_term_string}",
-        "query-input":"required name=search_term_string"
-      }
-    },
-    {
-      "@type":"ProfessionalService",
-      "@id":"https://cazacomm.fr/#service",
-      "name":"Création de site internet & site vitrine",
-      "url":"https://cazacomm.fr/",
-      "provider":{"@id":"https://cazacomm.fr/#org"},
-      "areaServed":[
-        {"@type":"City","name":"Tarbes"},
-        {"@type":"City","name":"Bayonne"},
-        {"@type":"City","name":"Anglet"},
-        {"@type":"City","name":"Biarritz"},
-        {"@type":"City","name":"Pau"},
-        {"@type":"City","name":"Lourdes"},
-        {"@type":"City","name":"Dax"},
-        {"@type":"City","name":"Mont-de-Marsan"},
-        {"@type":"City","name":"Orthez"},
-        {"@type":"City","name":"Hendaye"},
-        {"@type":"City","name":"Saint-Jean-de-Luz"},
-        {"@type":"City","name":"Tarnos"},
-        {"@type":"City","name":"Hasparren"},
-        {"@type":"City","name":"Lannemezan"},
-        {"@type":"City","name":"Séméac"},
-        {"@type":"City","name":"Ibos"},
-        {"@type":"City","name":"Odos"}
-      ],
-      "serviceType":[
-        "Création de site internet",
-        "Création de site vitrine",
-        "Refonte de site",
-        "Optimisation de conversion"
-      ],
-      "offers":{
-        "@type":"Offer",
-        "url":"https://cazacomm.fr/#services",
-        "priceCurrency":"EUR"
-      }
-    }
-  ]
-}
-</script>
+  <!-- ====== Données structurées ====== -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {"@type":"Organization","@id":"https://cazacomm.fr/#org","name":"CAZA COMM","url":"https://cazacomm.fr/","logo":"https://cazacomm.fr/assets/logo-512.png","email":"mailto:caza.comm@gmail.com","telephone":"+33767197467","sameAs":["https://www.instagram.com/caza.comm/","https://www.youtube.com/@CazaComm"]},
+      {"@type":"WebSite","@id":"https://cazacomm.fr/#website","url":"https://cazacomm.fr/","name":"CAZA COMM","publisher":{"@id":"https://cazacomm.fr/#org"},"potentialAction":{"@type":"SearchAction","target":"https://cazacomm.fr/?s={search_term_string}","query-input":"required name=search_term_string"}},
+      {"@type":"ProfessionalService","@id":"https://cazacomm.fr/#service","name":"Création de site internet & site vitrine","url":"https://cazacomm.fr/","provider":{"@id":"https://cazacomm.fr/#org"},"areaServed":[
+        {"@type":"City","name":"Tarbes"},{"@type":"City","name":"Bayonne"},{"@type":"City","name":"Anglet"},{"@type":"City","name":"Biarritz"},{"@type":"City","name":"Pau"},{"@type":"City","name":"Lourdes"},{"@type":"City","name":"Dax"},{"@type":"City","name":"Mont-de-Marsan"},{"@type":"City","name":"Orthez"},{"@type":"City","name":"Hendaye"},{"@type":"City","name":"Saint-Jean-de-Luz"},{"@type":"City","name":"Tarnos"},{"@type":"City","name":"Hasparren"},{"@type":"City","name":"Lannemezan"},{"@type":"City","name":"Séméac"},{"@type":"City","name":"Ibos"},{"@type":"City","name":"Odos"}],
+        "serviceType":["Création de site internet","Création de site vitrine","Refonte de site","Optimisation de conversion"],
+        "offers":{"@type":"Offer","url":"https://cazacomm.fr/#services","priceCurrency":"EUR"}}
+    ]}
+  </script>
   
- <!-- Couleurs & police système (sobres et lisibles) -->
-<style>
-  :root{--brand:#16c172;--brand-ink:#0d3b2e;--ink:#111;--muted:#6b7280;--bg:#ffffff;--bg-2:#0b0f14;--card:#f7f7f8;--ring:rgba(22,193,114,.35);--radius:18px}
-  html{scroll-behavior:smooth}
-  *{box-sizing:border-box}
-  body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial,'Noto Sans',sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
-  img{max-width:100%;height:auto;display:block}
-  a{color:var(--brand);text-decoration:none}
-  p:not(.center-btn){text-align:justify;text-justify:inter-word;text-align-last:left;hyphens:auto;-webkit-hyphens:auto}
+  <!-- ===== Styles ===== -->
+  <style>
+    :root{--brand:#16c172;--brand-ink:#0d3b2e;--ink:#111;--muted:#6b7280;--bg:#ffffff;--bg-2:#0b0f14;--card:#f7f7f8;--ring:rgba(22,193,114,.35);--radius:18px}
+    html{scroll-behavior:smooth}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial,'Noto Sans',sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;overflow-x:hidden}
+    img{max-width:100%;height:auto;display:block}
+    a{color:var(--brand);text-decoration:none}
+    p:not(.center-btn){text-align:justify;text-justify:inter-word;text-align-last:left;hyphens:auto;-webkit-hyphens:auto}
+    .sr{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 
-  /* ===== Header sticky ===== */
-  .header{position:sticky;top:0;z-index:50;backdrop-filter:saturate(130%) blur(6px);background:rgba(255,255,255,.8);border-bottom:1px solid rgba(0,0,0,.06)}
-  .nav{max-width:1200px;margin:auto;display:flex;align-items:center;gap:20px;padding:14px 20px}
-  .brand{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--brand-ink);letter-spacing:.2px}
-  .brand img{width:34px;height:34px;filter:drop-shadow(0 0 8px var(--ring))}
-  .nav a{font-weight:600;color:#111;opacity:.9}
-  .nav a:hover{opacity:1}
-  .menu{margin-left:auto;display:flex;gap:18px;align-items:center}
-  .cta{display:inline-flex;align-items:center;justify-content:center;padding:10px 16px;border-radius:999px;background:var(--brand);color:#fff;font-weight:700;border:1px solid #0e8e53}
-  .cta:hover{transform:translateY(-1px);box-shadow:0 10px 25px -10px var(--ring)}
-  .mobile-toggle{display:none;border:1px solid rgba(0,0,0,.08);padding:8px 12px;border-radius:10px;background:#fff}
+    /* ===== Header sticky ===== */
+    .header{position:sticky;top:0;z-index:60;backdrop-filter:saturate(130%) blur(6px);background:rgba(255,255,255,.8);border-bottom:1px solid rgba(0,0,0,.06)}
+    .nav{max-width:1200px;margin:auto;display:flex;align-items:center;gap:20px;padding:14px 20px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--brand-ink);letter-spacing:.2px}
+    .brand img{width:34px;height:34px;filter:drop-shadow(0 0 8px var(--ring))}
+    .nav a{font-weight:600;color:#111;opacity:.9}
+    .nav a:hover{opacity:1}
+    .menu{margin-left:auto;display:flex;gap:18px;align-items:center}
+    .cta{display:inline-flex;align-items:center;justify-content:center;padding:10px 16px;border-radius:999px;background:var(--brand);color:#fff;font-weight:700;border:1px solid #0e8e53}
+    .cta:hover{transform:translateY(-1px);box-shadow:0 10px 25px -10px var(--ring)}
+    .mobile-toggle{display:none;border:1px solid rgba(0,0,0,.08);padding:8px 12px;border-radius:10px;background:#fff}
 
-  /* ===== Héros (parallaxe) — FIX overlay + clics ===== */
-  .hero{position:relative;min-height:86vh;display:grid;place-items:center;color:#fff;background:#0e1713;overflow:hidden}
-  .hero::before,.hero::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:0}
-  .hero::before{background:url('(Image de fond Accueil)') center/cover no-repeat fixed;opacity:.42}
-  .hero::after{
-    background:
-      radial-gradient(60% 60% at 50% 50%, rgba(22,193,114,.22), transparent 60%),
-      linear-gradient(to bottom, rgba(0,0,0,.15), rgba(0,0,0,.35));
-    mix-blend-mode:normal;
-  }
-  .hero-inner{position:relative;z-index:1;max-width:1100px;margin:auto;padding:120px 20px 80px;text-align:center}
-  .hero h1{font-size:clamp(2rem,4vw,3.2rem);margin:0 0 12px;font-weight:900;letter-spacing:.3px}
-  .hero p{max-width:800px;margin:0 auto 24px;font-size:clamp(1rem,1.4vw,1.2rem);opacity:.95}
+    /* ===== Drawer mobile ===== */
+    .menu-panel{position:fixed;inset:0;background:rgba(0,0,0,.45);backdrop-filter:blur(4px);z-index:70;display:grid;place-items:start}
+    .menu-panel[hidden]{display:none}
+    .panel-card{width:100%;background:#fff;border-bottom-left-radius:18px;border-bottom-right-radius:18px;box-shadow:0 20px 50px -20px rgba(0,0,0,.35)}
+    .panel-top{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid rgba(0,0,0,.06)}
+    .brand-mini{font-weight:800;color:var(--brand-ink)}
+    .panel-close{border:1px solid rgba(0,0,0,.08);background:#fff;padding:8px 10px;border-radius:10px}
+    .panel-links{display:grid;padding:10px 14px 18px}
+    .panel-links a{padding:14px 10px;border-radius:12px;font-weight:700;color:#111}
+    .panel-links a:hover{background:#f7f7f8}
+    .panel-links .cta.wide{display:block;text-align:center;margin-top:6px}
 
-  /* Actions héros */
-  .hero .actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-  /* BOUTON GHOST — “Voir nos services” */
-  .ghost{
-    display:inline-flex;align-items:center;justify-content:center;
-    padding:10px 16px;border-radius:999px;
-    border:1.5px solid rgba(255,255,255,.7);
-    background:rgba(255,255,255,.06);
-    color:#ffffff; font-weight:700;
-    transition:transform .2s ease, box-shadow .2s ease, background .2s ease, color .2s ease, border-color .2s ease;
-  }
-  .ghost:hover{
-    background:#ffffff; color:#0b1720; border-color:#ffffff;
-    transform:translateY(-1px); box-shadow:0 10px 25px -12px rgba(0,0,0,.45);
-  }
-  .ghost:focus-visible{outline:none;box-shadow:0 0 0 3px rgba(255,255,255,.4),0 0 0 6px rgba(22,193,114,.35)}
+    /* ===== Héros ===== */
+    .hero{position:relative;min-height:86vh;display:grid;place-items:center;color:#fff;background:#0e1713;overflow:hidden}
+    .hero::before,.hero::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:0}
+    .hero::before{background:url('(Image de fond Accueil)') center/cover no-repeat fixed;opacity:.42}
+    .hero::after{background:radial-gradient(60% 60% at 50% 50%, rgba(22,193,114,.22), transparent 60%),linear-gradient(to bottom, rgba(0,0,0,.15), rgba(0,0,0,.35));mix-blend-mode:normal}
+    .hero-inner{position:relative;z-index:1;max-width:1100px;margin:auto;padding:120px 20px 80px;text-align:center}
+    .hero h1{font-size:clamp(2rem,4vw,3.2rem);margin:0 0 12px;font-weight:900;letter-spacing:.3px}
+    .hero p{max-width:800px;margin:0 auto 24px;font-size:clamp(1rem,1.4vw,1.2rem);opacity:.95}
+    .hero .actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+    .ghost{display:inline-flex;align-items:center;justify-content:center;padding:10px 16px;border-radius:999px;border:1.5px solid rgba(255,255,255,.7);background:rgba(255,255,255,.06);color:#ffffff;font-weight:700;transition:transform .2s ease, box-shadow .2s ease, background .2s ease, color .2s ease, border-color .2s ease}
+    .ghost:hover{background:#ffffff;color:#0b1720;border-color:#ffffff;transform:translateY(-1px);box-shadow:0 10px 25px -12px rgba(0,0,0,.45)}
+    .ghost:focus-visible{outline:none;box-shadow:0 0 0 3px rgba(255,255,255,.4),0 0 0 6px rgba(22,193,114,.35)}
+    .badge{display:inline-flex;align-items:center;gap:8px;background:rgba(22,193,114,.15);border:1px solid rgba(22,193,114,.35);color:#d1fae5;padding:6px 12px;border-radius:999px;margin-bottom:14px;font-weight:700}
 
-  .badge{display:inline-flex;align-items:center;gap:8px;background:rgba(22,193,114,.15);border:1px solid rgba(22,193,114,.35);color:#d1fae5;padding:6px 12px;border-radius:999px;margin-bottom:14px;font-weight:700}
+    /* ===== Sections ===== */
+    .section{max-width:1200px;margin:auto;padding:72px 20px}
+    .title{font-size:clamp(1.6rem,3vw,2.2rem);margin:0 0 10px}
+    .sub{color:var(--muted);margin:0 0 28px}
 
-  /* ===== Section wrapper ===== */
-  .section{max-width:1200px;margin:auto;padding:72px 20px}
-  .title{font-size:clamp(1.6rem,3vw,2.2rem);margin:0 0 10px}
-  .sub{color:var(--muted);margin:0 0 28px}
+    /* ===== À propos ===== */
+    .about{display:grid;grid-template-columns:1.1fr .9fr;gap:28px}
+    .about .card{background:var(--card);border:1px solid rgba(0,0,0,.06);border-radius:var(--radius);padding:24px}
+    .about .em{background:linear-gradient(135deg,var(--brand),#22d39a);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:900}
+    .about .points{display:grid;gap:10px;margin-top:12px}
+    .point{display:flex;gap:10px;align-items:flex-start}
+    .point i{width:10px;height:10px;border-radius:999px;background:var(--brand);margin-top:8px;box-shadow:0 0 0 4px var(--ring)}
 
-  /* ===== À propos ===== */
-  .about{display:grid;grid-template-columns:1.1fr .9fr;gap:28px}
-  .about .card{background:var(--card);border:1px solid rgba(0,0,0,.06);border-radius:var(--radius);padding:24px}
-  .about .em{background:linear-gradient(135deg,var(--brand),#22d39a);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:900}
-  .about .points{display:grid;gap:10px;margin-top:12px}
-  .point{display:flex;gap:10px;align-items:flex-start}
-  .point i{width:10px;height:10px;border-radius:999px;background:var(--brand);margin-top:8px;box-shadow:0 0 0 4px var(--ring)}
+    /* ===== Services ===== */
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .service{background:#fff;border:1px solid rgba(0,0,0,.06);border-radius:var(--radius);padding:22px;transition:transform .25s ease, box-shadow .25s ease}
+    .service:hover{transform:translateY(-4px);box-shadow:0 16px 35px -20px rgba(0,0,0,.3)}
+    .service h3{margin:4px 0 6px}
+    .tag{display:inline-block;font-size:.8rem;padding:4px 10px;border-radius:999px;background:rgba(22,193,114,.12);border:1px solid rgba(22,193,114,.35);color:var(--brand-ink);font-weight:700}
 
-  /* ===== Services ===== */
-  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-  .service{background:#fff;border:1px solid rgba(0,0,0,.06);border-radius:var(--radius);padding:22px;transition:transform .25s ease, box-shadow .25s ease}
-  .service:hover{transform:translateY(-4px);box-shadow:0 16px 35px -20px rgba(0,0,0,.3)}
-  .service h3{margin:4px 0 6px}
-  .tag{display:inline-block;font-size:.8rem;padding:4px 10px;border-radius:999px;background:rgba(22,193,114,.12);border:1px solid rgba(22,193,114,.35);color:var(--brand-ink);font-weight:700}
+    /* ===== Réalisations ===== */
+    .works{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .work{position:relative;overflow:hidden;border-radius:14px;border:1px solid rgba(0,0,0,.06);background:#000}
+    .work img{width:100%;height:220px;object-fit:cover;opacity:.9;transition:transform .5s ease, opacity .4s ease}
+    .work:hover img{transform:scale(1.06);opacity:1}
+    .work .legend{position:absolute;left:10px;bottom:10px;background:rgba(0,0,0,.55);color:#fff;padding:8px 12px;border-radius:999px;font-weight:700;border:1px solid rgba(255,255,255,.25)}
 
-  /* ===== Réalisations ===== */
-  .works{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-  .work{position:relative;overflow:hidden;border-radius:14px;border:1px solid rgba(0,0,0,.06);background:#000}
-  .work img{width:100%;height:220px;object-fit:cover;opacity:.9;transition:transform .5s ease, opacity .4s ease}
-  .work:hover img{transform:scale(1.06);opacity:1}
-  .work .legend{position:absolute;left:10px;bottom:10px;background:rgba(0,0,0,.55);color:#fff;padding:8px 12px;border-radius:999px;font-weight:700;border:1px solid rgba(255,255,255,.25)}
+    /* ===== Avis ===== */
+    .testi-wrap{position:relative;background:linear-gradient(180deg,#f8fbf9,#ffffff)}
+    .carousel{overflow:hidden;position:relative;border:1px solid rgba(0,0,0,.06);border-radius:var(--radius);background:#fff}
+    .track{display:flex;transition:transform .6s ease}
+    .tcard{min-width:100%;padding:28px}
+    .stars{color:#f59e0b;letter-spacing:2px}
+    .car-ctrl{display:flex;gap:10px;justify-content:center;margin-top:12px}
+    .ctrl{border:1px solid rgba(0,0,0,.08);background:#fff;border-radius:999px;padding:8px 12px}
+    .ctrl:hover{background:#f4f4f5}
 
-  /* ===== Avis (carousel simple) ===== */
-  .testi-wrap{position:relative;background:linear-gradient(180deg,#f8fbf9,#ffffff)}
-  .carousel{overflow:hidden;position:relative;border:1px solid rgba(0,0,0,.06);border-radius:var(--radius);background:#fff}
-  .track{display:flex;transition:transform .6s ease}
-  .tcard{min-width:100%;padding:28px}
-  .stars{color:#f59e0b;letter-spacing:2px}
-  .car-ctrl{display:flex;gap:10px;justify-content:center;margin-top:12px}
-  .ctrl{border:1px solid rgba(0,0,0,.08);background:#fff;border-radius:999px;padding:8px 12px}
-  .ctrl:hover{background:#f4f4f5}
+    /* ===== Stats ===== */
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:22px}
+    .stat{background:#fff;border:1px solid rgba(0,0,0,.06);border-radius:14px;padding:16px;text-align:center}
+    .num{font-size:clamp(1.4rem,3vw,2rem);font-weight:900;color:var(--brand-ink)}
+    .label{color:var(--muted);font-weight:600}
 
-  /* ===== Stats ===== */
-  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:22px}
-  .stat{background:#fff;border:1px solid rgba(0,0,0,.06);border-radius:14px;padding:16px;text-align:center}
-  .num{font-size:clamp(1.4rem,3vw,2rem);font-weight:900;color:var(--brand-ink)}
-  .label{color:var(--muted);font-weight:600}
+    /* ===== Contact ===== */
+    .contact{display:grid;grid-template-columns:1.1fr .9fr;gap:22px}
+    form{display:grid;gap:12px}
+    input,textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid rgba(0,0,0,.12);background:#fff}
+    textarea{min-height:140px;resize:vertical}
+    .submit{background:var(--brand);color:#fff;border:1px solid #0e8e53;padding:12px 18px;border-radius:12px;font-weight:800}
+    .submit:hover{box-shadow:0 10px 25px -10px var(--ring);transform:translateY(-1px)}
+    .card{background:var(--card);border:1px solid rgba(0,0,0,.06);border-radius:var(--radius);padding:20px}
+    .whatsapp{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;background:#25d366;border:1px solid #12ad4c;color:#083b20;border-radius:999px;font-weight:900}
+    .whatsapp svg{width:18px;height:18px}
 
-  /* ===== Contact ===== */
-  .contact{display:grid;grid-template-columns:1.1fr .9fr;gap:22px}
-  form{display:grid;gap:12px}
-  input,textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid rgba(0,0,0,.12);background:#fff}
-  textarea{min-height:140px;resize:vertical}
-  .submit{background:var(--brand);color:#fff;border:1px solid #0e8e53;padding:12px 18px;border-radius:12px;font-weight:800}
-  .submit:hover{box-shadow:0 10px 25px -10px var(--ring);transform:translateY(-1px)}
-  .card{background:var(--card);border:1px solid rgba(0,0,0,.06);border-radius:var(--radius);padding:20px}
-  .whatsapp{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;background:#25d366;border:1px solid #12ad4c;color:#083b20;border-radius:999px;font-weight:900}
-  .whatsapp svg{width:18px;height:18px}
+    /* ===== Footer ===== */
+    footer{background:var(--bg-2);color:#d4d7dd;margin-top:60px}
+    .foot{max-width:1200px;margin:auto;padding:28px 20px;display:grid;grid-template-columns:1.2fr .8fr;gap:22px;align-items:center}
+    .foot a{color:#e6fff4}
+    .legal{display:flex;gap:14px;flex-wrap:wrap}
+    .copy{color:#9aa3ad}
 
-  /* ===== Footer ===== */
-  footer{background:var(--bg-2);color:#d4d7dd;margin-top:60px}
-  .foot{max-width:1200px;margin:auto;padding:28px 20px;display:grid;grid-template-columns:1.2fr .8fr;gap:22px;align-items:center}
-  .foot a{color:#e6fff4}
-  .legal{display:flex;gap:14px;flex-wrap:wrap}
-  .copy{color:#9aa3ad}
+    /* ===== Utilities ===== */
+    .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease, transform .6s ease}
+    .reveal.is-visible{opacity:1;transform:none}
+    .center{text-align:center}
+    .muted{color:var(--muted)}
+    .spacer{height:18px}
+    section{scroll-margin-top:80px}
 
-  /* ===== Utilities ===== */
-  .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease, transform .6s ease}
-  .reveal.is-visible{opacity:1;transform:none}
-  .center{text-align:center}
-  .muted{color:var(--muted)}
-  .spacer{height:18px}
-
-  /* ===== Responsive ===== */
-  @media (max-width: 1024px){
-    .about,.contact{grid-template-columns:1fr}
-  }
-  @media (max-width: 900px){
-    .grid-3,.works,.stats{grid-template-columns:1fr 1fr}
-    .work img{height:200px}
-  }
-  @media (max-width: 640px){
-    .menu{display:none}
-    .mobile-toggle{display:inline-block;margin-left:auto}
-    .works,.grid-3,.stats{grid-template-columns:1fr}
-    .hero{min-height:78vh}
-    .foot{grid-template-columns:1fr}
-  }
-
-  /* Défilement ancré net sous header sticky */
-  section{scroll-margin-top:80px}
-</style>
+    /* ===== Responsive ===== */
+    @media (max-width: 1024px){
+      .about,.contact{grid-template-columns:1fr}
+    }
+    @media (max-width: 900px){
+      .grid-3,.works,.stats{grid-template-columns:1fr 1fr}
+      .work img{height:200px}
+    }
+    @media (max-width: 768px){
+      .menu{display:none}                 /* cache menu desktop */
+      .mobile-toggle{display:inline-flex;align-items:center;gap:8px;margin-left:auto}
+      .section{padding:58px 16px}
+      .grid-3,.works,.stats{grid-template-columns:1fr}
+      .hero{min-height:84vh}
+      .hero-inner{padding:100px 16px 64px}
+      .hero h1{font-size:clamp(1.9rem,6vw,2.6rem)}
+    }
+    @media (max-width: 640px){
+      .foot{grid-template-columns:1fr}
+    }
+    @media (max-width: 380px){
+      .hero h1{font-size:1.8rem}
+      .cta{padding:10px 14px}
+    }
+  </style>
 </head>
 <body>
 
-  <!-- ===== HEADER ===== -->
+  <!-- ===== HEADER (desktop + burger mobile) ===== -->
   <header class="header">
     <nav class="nav">
       <a href="#accueil" class="brand">
-        <!-- Remplace src par ton logo (ex: /assets/logo.svg). Le fichier fourni dans ce doc: /mnt/data/logo.png -->
         <img src="images/logo.png" alt="Logo Caza Comm" />
         <span>Caza Comm</span>
       </a>
 
-      <button class="mobile-toggle" id="mobileToggle" aria-label="Ouvrir le menu">Menu</button>
-
-      <div class="menu" id="menu">
+      <!-- Menu desktop -->
+      <div class="menu">
         <a href="#services">Services</a>
         <a href="#works">Réalisations</a>
         <a href="#avis">Avis</a>
         <a href="#contact">Contact</a>
         <a href="#contact" class="cta">Devis rapide</a>
       </div>
+
+      <!-- Bouton burger -->
+      <button class="mobile-toggle" id="btnBurger" aria-expanded="false" aria-controls="menu-panel">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+        <span class="sr">Ouvrir le menu</span>
+      </button>
     </nav>
+
+    <!-- Drawer mobile -->
+    <aside id="menu-panel" class="menu-panel" hidden>
+      <div class="panel-card">
+        <div class="panel-top">
+          <span class="brand-mini">Caza Comm</span>
+          <button class="panel-close" id="btnClose" aria-label="Fermer le menu">
+            <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+          </button>
+        </div>
+        <nav class="panel-links">
+          <a href="#services">Services</a>
+          <a href="#works">Réalisations</a>
+          <a href="#avis">Avis</a>
+          <a href="#contact">Contact</a>
+          <a class="cta wide" href="#contact">Devis rapide</a>
+        </nav>
+      </div>
+    </aside>
   </header>
 
   <!-- ===== HERO ===== -->
@@ -348,25 +315,26 @@
     <h2 class="title">Réalisations</h2>
     <p class="sub">Aperçu de projets</p>
     <div class="works">
-    <a class="work" href="https://atptarbes.fr">
-  <img src="images/projet1.jpeg" alt="Création de site internet pour salle de sport à Tarbes (ATP Tarbes)">
-  <span class="legend">Projet — Salle de Sport</span>
-</a>
-<a class="work" href="https://belvedere65.com">
-  <img src="images/projet2.jpeg" alt="Site vitrine événementiel — Le Belvédère du Domaine">
-  <span class="legend">Projet — Événementiel</span>
-</a>
-<a class="work" href="https://lasolinapizza.fr">
-  <img src="images/projet3.jpeg" alt="Création de site vitrine pour pizzeria artisanale à Tarbes">
-  <span class="legend">Projet — Restauration</span>
-</a>
-<a class="work" href="https://birdhunter65.fr">
-  <img src="images/projet4.jpeg" alt="Site vitrine domaine de chasse — Hautes-Pyrénées">
-  <span class="legend">Projet — Domaine de chasse</span>
-</a>     </div>
+      <a class="work" href="https://atptarbes.fr">
+        <img src="images/projet1.jpeg" alt="Création de site internet pour salle de sport à Tarbes (ATP Tarbes)">
+        <span class="legend">Projet — Salle de Sport</span>
+      </a>
+      <a class="work" href="https://belvedere65.com">
+        <img src="images/projet2.jpeg" alt="Site vitrine événementiel — Le Belvédère du Domaine">
+        <span class="legend">Projet — Événementiel</span>
+      </a>
+      <a class="work" href="https://lasolinapizza.fr">
+        <img src="images/projet3.jpeg" alt="Création de site vitrine pour pizzeria artisanale à Tarbes">
+        <span class="legend">Projet — Restauration</span>
+      </a>
+      <a class="work" href="https://birdhunter65.fr">
+        <img src="images/projet4.jpeg" alt="Site vitrine domaine de chasse — Hautes-Pyrénées">
+        <span class="legend">Projet — Domaine de chasse</span>
+      </a>
+    </div>
   </section>
 
-  <!-- ===== AVIS / CAROUSEL ===== -->
+  <!-- ===== AVIS ===== -->
   <section class="section testi-wrap" id="avis">
     <h2 class="title center">Ils nous font confiance 🫶</h2>
 
@@ -387,7 +355,7 @@
           <p>« J’ai fait appel à Caza Communication pour la création de mon site internet ainsi que la gestion de mes réseaux sociaux, et j’en suis totalement satisfaite ! ... »</p>
           <strong>— Le Belvédère</strong>
         </div>
-         <div class="tcard">
+        <div class="tcard">
           <div class="stars">★★★★★</div>
           <p>« Merci pour ton professionnalisme et ton savoir-faire ! »</p>
           <strong>— Sandrine Scano</strong>
@@ -411,26 +379,23 @@
     <p class="sub">Dites-nous : nous répondons très rapidement</p>
     <div class="contact">
       <form action="https://formsubmit.co/caza.comm@gmail.com" method="POST">
-  <!-- options -->
-  <input type="hidden" name="_subject" value="Nouveau message — Caza Comm">
-  <input type="hidden" name="_template" value="table">
-  <input type="hidden" name="_captcha" value="false">
-  <input type="hidden" name="_next" value="https://cazacomm.fr/">
-  <!-- honeypot anti-bot -->
-  <input type="text" name="_honey" style="display:none">
+        <input type="hidden" name="_subject" value="Nouveau message — Caza Comm">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://cazacomm.fr/">
+        <input type="text" name="_honey" style="display:none">
 
-  <input type="text" name="name" placeholder="Votre nom et prénom" required>
-  <input type="email" name="email" placeholder="Votre e-mail" required>
-  <textarea name="message" placeholder="Décrivez votre besoin…" required></textarea>
-  <button class="submit" type="submit">Envoyer ma demande</button>
-</form>
+        <input type="text" name="name" placeholder="Votre nom et prénom" required>
+        <input type="email" name="email" placeholder="Votre e-mail" required>
+        <textarea name="message" placeholder="Décrivez votre besoin…" required></textarea>
+        <button class="submit" type="submit">Envoyer ma demande</button>
+      </form>
 
       <div class="card reveal" data-reveal>
         <h3>Coordonnées</h3>
         <p><strong>Caza Comm</strong><br>Sud Ouest — France<br><a href="mailto:caza.comm@gmail.com">caza.comm@gmail.com</a><br><a href="tel:+33767197467">+33 7 67 19 74 67</a></p>
         <a class="whatsapp" href="https://wa.me/33767197467?text=Bonjour%20Caza%20Comm%2C%20j%27ai%20un%20projet%20de%20site%20web." target="_blank" rel="noopener">
-          <!-- Icône WhatsApp -->
-          <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M19.1 17.5c-.3-.2-1.8-.9-2-.9s-.5-.1-.7.2c-.2.3-.8 1-.9 1.2-.2.2-.4.3-.7.1-1.9-1-3.2-2.8-3.4-3.2-.2-.3 0-.5.2-.7.2-.2.3-.4.5-.6.2-.2.3-.4.4-.6.1-.2 0-.4 0-.6s-.7-1.7-1-2.3c-.3-.6-.5-.6-.7-.6h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 2.9s1.2 3.4 1.4 3.7c.2.3 2.4 3.7 5.8 5.1.8.3 1.4.5 1.8.6.8.2 1.6.2 2.2.1.7-.1 2.1-.9 2.4-1.7.3-.8.3-1.5.2-1.7-.1-.2-.3-.3-.6-.5z"/><path d="M26.7 5.3C24.1 2.7 20.6 1.2 17 1.2 9.5 1.2 3.4 7.3 3.4 14.8c0 2.4.6 4.7 1.9 6.7L3 30.8l9.5-2.5c1.9 1 4.1 1.5 6.3 1.5 7.5 0 13.6-6.1 13.6-13.6 0-3.6-1.4-7.1-4-9.7zM17 27.6c-2.1 0-4.2-.6-6-1.6l-.4-.2-5.6 1.5 1.5-5.4-.2-.4c-1.2-1.8-1.8-3.8-1.8-5.9 0-6.1 5-11.1 11.1-11.1 3 0 5.8 1.2 7.9 3.3s3.3 4.9 3.3 7.9c0 6.1-5 11.1-11.1 11.1z"/></svg>
+          <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M19.1 17.5c-.3-.2-1.8-.9-2-.9s-.5-.1-.7.2c-.2.3-.8 1-.9 1.2-.2.2-.4.3-.7.1-1.9-1-3.2-2.8-3.4-3.2-.2-.3 0-.5.2-.7.2-.2.3-.4.5-.6.2-.2.3-.4.4-.6.1-.2 0-.4 0-.6s-.7-1.7-1-2.3c-.3-.6-.5-.6-.7-.6h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 2.9s1.2 3.4 1.4 3.7c.2.3 2.4 3.7 5.8 5.1.8.3 1.4.5 1.8.6.8.2 1.6.2 2.2.1.7-.1 2.1-.9 2.4-1.7.3-.8.3-1.5.2-1.7-.1-.2-.3-.3-.6-.5z"/><path d="M26.7 5.3C24.1 2.7 20.6 1.2 17 1.2 9.5 1.2 3.4 7.3 3.4 14.8c0 2.4.6 4.7 1.9 6.7L3 30.8l9.5-2.5c1.9 1 4.1 1.5 6.3 1.5 7.5 0 13.6-6.1 13.6-13.6 0-3.6-1.4-7.1-4-9.7z"/></svg>
           Écrire sur WhatsApp
         </a>
       </div>
@@ -455,14 +420,24 @@
     </div>
   </footer>
 
-  <!-- ===== JS (révélations, compteur, carousel, menu mobile) ===== -->
+  <!-- ===== JS ===== -->
   <script>
     // Année dynamique
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Menu mobile simple (affiche/masque .menu)
-    const mobileToggle=document.getElementById('mobileToggle'); const menu=document.getElementById('menu');
-    mobileToggle?.addEventListener('click',()=>{menu.style.display=menu.style.display==='flex'?'none':'flex'});
+    // Drawer mobile
+    const btnOpen = document.getElementById('btnBurger');
+    const panel   = document.getElementById('menu-panel');
+    const btnClose= document.getElementById('btnClose');
+    const lockScroll = (lock)=>{ document.body.style.overflow = lock ? 'hidden' : '' };
+
+    btnOpen?.addEventListener('click', ()=>{
+      panel.hidden = false; btnOpen.setAttribute('aria-expanded','true'); lockScroll(true);
+    });
+    btnClose?.addEventListener('click', ()=>{
+      panel.hidden = true; btnOpen.setAttribute('aria-expanded','false'); lockScroll(false);
+    });
+    panel?.addEventListener('click',(e)=>{ if(e.target===panel){ btnClose.click(); }});
 
     // Révélations au scroll
     const revealEls=[...document.querySelectorAll('[data-reveal]')];
@@ -478,10 +453,9 @@
     const track=document.getElementById('track'); const slides=track.children; let index=0;
     function go(dir){index=(dir==='next')?(index+1)%slides.length:(index-1+slides.length)%slides.length; track.style.transform=`translateX(-${index*100}%)`;}
     document.querySelectorAll('.ctrl').forEach(btn=>btn.addEventListener('click',()=>go(btn.dataset.dir)));
-    // Auto-play léger
     setInterval(()=>go('next'), 6000);
 
-    // Parallaxe de fond (fallback si background-attachment: fixed n'est pas fluide)
+    // Parallaxe légère
     const heroInner=document.querySelector('.hero .hero-inner');
     window.addEventListener('scroll',()=>{const y=window.scrollY; heroInner.style.transform=`translateY(${Math.min(30,y*0.08)}px)`;},{passive:true});
   </script>
