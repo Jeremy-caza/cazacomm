@@ -120,21 +120,25 @@
     .mobilePanel .sheet .actions{display:flex;gap:10px;padding:12px;border-top:1px solid rgba(16,24,40,.07)}
     .mobilePanel .sheet .actions .btn{flex:1}
 
-    /* ====== Intro tarification (pas de hero, mais une entête compacte) ====== */
-    .pageTop{padding:28px 0 16px 0}
-    .topGrid{display:grid;grid-template-columns:1.15fr .85fr;gap:14px;align-items:stretch}
-    .topCard{border-radius:var(--radius2);padding:18px;border:1px solid rgba(16,24,40,.10);background:linear-gradient(180deg,rgba(255,255,255,.88),rgba(255,255,255,.74));box-shadow:var(--shadow);position:relative;overflow:hidden}
-    .topCard:before{content:"";position:absolute;inset:-140px -140px auto auto;width:420px;height:420px;border-radius:999px;background:radial-gradient(circle at 40% 40%,rgba(22,193,114,.22),rgba(22,193,114,0) 70%)}
-    .topAside{--aside-img:none;border-radius:var(--radius2);padding:18px;border:1px solid rgba(16,24,40,.10);box-shadow:var(--shadow);display:flex;flex-direction:column;justify-content:space-between;gap:10px;position:relative;overflow:hidden;
+   /* ====== Intro tarification (pas de hero, mais une entête compacte) ====== */
+.pageTop{padding:28px 0 16px 0}
+.topGrid{display:grid;grid-template-columns:1.15fr .85fr;gap:14px;align-items:stretch}
+.topCard{border-radius:var(--radius2);padding:18px;border:1px solid rgba(16,24,40,.10);background:linear-gradient(180deg,rgba(255,255,255,.88),rgba(255,255,255,.74));box-shadow:var(--shadow);position:relative;overflow:hidden}
+.topCard:before{content:"";position:absolute;inset:-140px -140px auto auto;width:420px;height:420px;border-radius:999px;background:radial-gradient(circle at 40% 40%,rgba(22,193,114,.22),rgba(22,193,114,0) 70%)}
+
+.topAside{--aside-img:none;border-radius:var(--radius2);padding:18px;border:1px solid rgba(16,24,40,.10);box-shadow:var(--shadow);display:flex;flex-direction:column;justify-content:space-between;gap:10px;position:relative;overflow:hidden;
 background-image:
   radial-gradient(900px 320px at 20% 0%,rgba(22,193,114,.18),rgba(22,193,114,0) 62%),
   var(--aside-img);
 background-size:auto,cover;
 background-position:0 0,center;
-background-repeat:no-repeat;
-  .miniLine{display:flex;justify-content:space-between;gap:10px;align-items:baseline;padding:10px 12px;border-radius:18px;border:1px solid rgba(16,24,40,.08);background:rgba(255,255,255,.72)}
-    .miniLine b{font-weight:950}
-    .miniLine span{color:rgba(11,15,20,.70);font-weight:800}
+background-repeat:no-repeat}
+
+/* ✅ ICI c’était cassé : maintenant miniLine est bien en dehors de topAside */
+.miniLine{display:flex;justify-content:space-between;gap:10px;align-items:baseline;padding:10px 12px;border-radius:18px;border:1px solid rgba(16,24,40,.08);background:rgba(255,255,255,.72)}
+.miniLine b{font-weight:950}
+.miniLine span{color:rgba(11,15,20,.70);font-weight:800}
+
 
     /* ====== Pricing (reprend la base index, mais plus “page dédiée”) ====== */
     .pricingTop{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px}
