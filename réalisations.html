@@ -75,9 +75,8 @@
     header{position:sticky;top:0;z-index:50;height:var(--headerH)}
     .navwrap{height:var(--headerH);display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid rgba(16,24,40,.06);background:rgba(255,255,255,.62);backdrop-filter:blur(var(--blur));-webkit-backdrop-filter:blur(var(--blur))}
     .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em}
-    .logo{width:34px;height:34px;border-radius:10px;background:radial-gradient(120% 120% at 20% 0%,rgba(22,193,114,.9),rgba(22,193,114,.2)),linear-gradient(135deg,#0b0f14 0%,#13202d 100%);box-shadow:0 10px 28px rgba(16,24,40,.14);position:relative;overflow:hidden}
-    .logo:after{content:"";position:absolute;inset:-10px;background:conic-gradient(from 180deg,rgba(255,255,255,.0),rgba(255,255,255,.35),rgba(255,255,255,.0));transform:translateX(-30%);opacity:.7}
-    nav{display:flex;align-items:center;gap:10px}
+    .logo{width:34px;height:34px;border-radius:10px;object-fit:contain;display:block;box-shadow:0 10px 28px rgba(16,24,40,.14);background:transparent}
+     nav{display:flex;align-items:center;gap:10px}
     .navlinks{display:flex;align-items:center;gap:16px}
     .navlinks a{font-weight:700;font-size:14px;color:rgba(11,15,20,.78);padding:10px 10px;border-radius:12px;outline:none}
     .navlinks a:hover{background:rgba(16,24,40,.05)}
@@ -183,7 +182,7 @@
     <div class="navwrap">
       <div class="container" style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:12px;">
         <a class="brand" href="index.html" aria-label="Aller à l'accueil">
-          <span class="logo" aria-hidden="true"></span>
+          <img class="logo" src="images/logo.png" alt="CAZA COMM">
           <div style="display:flex;flex-direction:column;line-height:1.05;">
             <strong>CAZA COMM</strong>
           </div>
@@ -214,7 +213,7 @@
     <div class="sheet" role="dialog" aria-modal="true" aria-label="Menu mobile">
       <div class="top">
         <div class="brand" style="gap:10px;">
-          <span class="logo" aria-hidden="true"></span>
+          <img class="logo" src="images/logo.png" alt="CAZA COMM">
           <strong>CAZA COMM</strong>
         </div>
         <button class="btn btn-small" id="closeMobile" type="button" aria-label="Fermer le menu">
@@ -263,23 +262,22 @@
     <section class="section bg-dark" aria-label="Projets réalisés">
       <div class="container">
         <span class="kicker"><span class="dot" aria-hidden="true"></span>Réalisations</span>
-        <h2>5 sites déjà en ligne.</h2>
 
         <div class="projects" id="projects" aria-label="Grille de projets">
           <a class="proj" href="https://atptarbes.fr" target="_blank" rel="noopener" aria-label="Ouvrir ATP Tarbes">
-            <div class="projMedia" style="background-image:url('images/projet1.jpeg');"><span class="projTag">ATP Tarbes</span></div>
+            <div class="projMedia" style="background-image:url('images/projet1.jpeg');"></div>
           </a>
           <a class="proj" href="https://belvedere65.com" target="_blank" rel="noopener" aria-label="Ouvrir Le Belvédère">
-            <div class="projMedia" style="background-image:url('images/projet2.jpeg');"><span class="projTag">Le Belvédère</span></div>
+            <div class="projMedia" style="background-image:url('images/projet2.jpeg');"></div>
           </a>
           <a class="proj" href="https://www.lasolinapizza.fr" target="_blank" rel="noopener" aria-label="Ouvrir La Solina Pizza">
-            <div class="projMedia" style="background-image:url('images/projet3.jpeg');"><span class="projTag">La Solina</span></div>
+            <div class="projMedia" style="background-image:url('images/projet3.jpeg');"></div>
           </a>
           <a class="proj" href="https://birdhunter65.fr" target="_blank" rel="noopener" aria-label="Ouvrir Bird Hunter 65">
-            <div class="projMedia" style="background-image:url('images/projet4.jpeg');"><span class="projTag">Bird Hunter</span></div>
+            <div class="projMedia" style="background-image:url('images/projet4.jpeg');"></div>
           </a>
           <a class="proj" href="https://lafabriqueacookies.fr" target="_blank" rel="noopener" aria-label="Ouvrir La Fabrique à Cookies">
-            <div class="projMedia" style="background-image:url('images/projet5.PNG');"><span class="projTag">Cookies</span></div>
+            <div class="projMedia" style="background-image:url('images/projet5.PNG');"></div>
           </a>
         </div>
       </div>
@@ -425,7 +423,7 @@
     <div class="container">
       <div class="footGrid">
         <div class="foot">
-          <div class="brand" style="margin-bottom:8px;"><span class="logo" aria-hidden="true"></span><strong>CAZA COMM</strong></div>
+          <div class="brand" style="margin-bottom:8px;"><img class="logo" src="images/logo.png" alt="CAZA COMM"><strong>CAZA COMM</strong></div>
         </div>
 
         <div class="foot">
