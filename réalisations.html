@@ -109,11 +109,11 @@
     .topGrid{display:grid;grid-template-columns:1.15fr .85fr;gap:14px;align-items:stretch}
     .topCard{border-radius:var(--radius2);padding:18px;border:1px solid rgba(16,24,40,.10);background:linear-gradient(180deg,rgba(255,255,255,.88),rgba(255,255,255,.74));box-shadow:var(--shadow);position:relative;overflow:hidden}
     .topCard:before{content:"";position:absolute;inset:-140px -140px auto auto;width:420px;height:420px;border-radius:999px;background:radial-gradient(circle at 40% 40%,rgba(22,193,114,.22),rgba(22,193,114,0) 70%)}
-    .topCard.imgBg{background-image:linear-gradient(180deg,rgba(255,255,255,.88),rgba(255,255,255,.70)),url('images/realisations-hero.jpg');background-size:cover;background-position:center}
     .topAside{border-radius:var(--radius2);padding:18px;border:1px solid rgba(16,24,40,.10);background:radial-gradient(900px 320px at 20% 0%,rgba(22,193,114,.18),rgba(22,193,114,0) 62%),linear-gradient(180deg,rgba(255,255,255,.88),rgba(255,255,255,.74));box-shadow:var(--shadow);display:flex;flex-direction:column;justify-content:space-between;gap:10px}
     .miniLine{display:flex;justify-content:space-between;gap:10px;align-items:baseline;padding:10px 12px;border-radius:18px;border:1px solid rgba(16,24,40,.08);background:rgba(255,255,255,.72)}
     .miniLine b{font-weight:950}
     .miniLine span{color:rgba(11,15,20,.70);font-weight:800}
+    .topAside.imgBg{border-radius:var(--radius2);padding:18px;border:1px solid rgba(16,24,40,.10);box-shadow:var(--shadow);display:flex;flex-direction:column;justify-content:space-between;gap:10px;position:relative;overflow:hidden;background-image:radial-gradient(900px 320px at 20% 0%,rgba(22,193,114,.18),rgba(22,193,114,0) 62%),url('images/realisations-hero.jpg');background-size:auto,cover;background-position:0 0,center;background-repeat:no-repeat;}
 
     /* ====== Réalisations (comme index) ====== */
     .projects{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
@@ -240,7 +240,7 @@
     <section class="pageTop bg-light" aria-label="Réalisations">
       <div class="container">
         <div class="topGrid">
-          <div class="topCard imgBg">
+          <div class="topCard">
             <span class="kicker"><span class="dot" aria-hidden="true"></span>Réalisations</span>
             <h1>Nos sites, en conditions réelles.</h1>
             <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px;position:relative;z-index:1;">
@@ -249,7 +249,7 @@
             </div>
           </div>
 
-          <aside class="topAside" aria-label="Récapitulatif">
+          <aside class="topAside imgBg" aria-label="Récapitulatif">
             <div class="miniLine"><b>Sur mesure</b></div>
             <div class="miniLine"><b>Livraison</b><span>1 semaine</span></div>
             <div class="miniLine"><b>Support</b><span>humain & réactif</span></div>
