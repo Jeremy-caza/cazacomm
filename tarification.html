@@ -125,7 +125,6 @@
 .topGrid{display:grid;grid-template-columns:1.15fr .85fr;gap:14px;align-items:stretch}
 .topCard{border-radius:var(--radius2);padding:18px;border:1px solid rgba(16,24,40,.10);background:linear-gradient(180deg,rgba(255,255,255,.88),rgba(255,255,255,.74));box-shadow:var(--shadow);position:relative;overflow:hidden}
 .topCard:before{content:"";position:absolute;inset:-140px -140px auto auto;width:420px;height:420px;border-radius:999px;background:radial-gradient(circle at 40% 40%,rgba(22,193,114,.22),rgba(22,193,114,0) 70%)}
-
 .topAside{--aside-img:none;border-radius:var(--radius2);padding:18px;border:1px solid rgba(16,24,40,.10);box-shadow:var(--shadow);display:flex;flex-direction:column;justify-content:space-between;gap:10px;position:relative;overflow:hidden;
 background-image:
   radial-gradient(900px 320px at 20% 0%,rgba(22,193,114,.18),rgba(22,193,114,0) 62%),
@@ -240,6 +239,16 @@ background-repeat:no-repeat}
     .fine{margin-top:16px;color:rgba(11,15,20,.56);font-weight:800;font-size:12px}
     footer .logo{width:34px;height:34px}
 
+    /* 1) Les décors ne doivent jamais bloquer les clics */
+.topCard:before{pointer-events:none}
+
+/* 2) Si le mobilePanel est caché, il ne doit pas capter de taps */
+.mobilePanel{pointer-events:none}
+.mobilePanel[aria-hidden="false"]{pointer-events:auto}
+
+/* 3) Priorité aux boutons du hero */
+.pageTop .btn{position:relative;z-index:2}
+
 
     /* ====== Responsive ====== */
     @media (max-width:980px){.topGrid{grid-template-columns:1fr}.plans{grid-template-columns:1fr}.footGrid{grid-template-columns:1fr}}
@@ -264,12 +273,12 @@ background-repeat:no-repeat}
             <a href="index.html">Accueil</a>
             <a href="tarification.html" aria-current="page">Tarification</a>
             <a href="réalisations.html">Réalisations</a>
-            <a href="index.html#contact">Contact</a>
+            <a href="humain.html">L’humain derrière</a>
           </div>
 
           <div class="navctas">
             <a class="btn btn-ghost btn-small" href="réalisations.html" aria-label="Voir les réalisations">Voir les réalisations</a>
-            <a class="btn btn-primary" href="index.html#contact" aria-label="Nous contacter">Nous contacter</a>
+            <a class="btn btn-primary" href="tel:+33767197467" aria-label="Appeler CAZA COMM">Nous contacter</a>
             <button class="burger" id="burger" type="button" aria-label="Ouvrir le menu mobile" aria-expanded="false" aria-controls="mobilePanel">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
             </button>
@@ -295,11 +304,11 @@ background-repeat:no-repeat}
         <a href="index.html">Accueil</a>
         <a href="tarification.html" aria-current="page">Tarification</a>
         <a href="réalisations.html">Réalisations</a>
-        <a href="index.html#contact">Contact</a>
+        <a href="humain.html">L’humain derrière</a>
       </div>
       <div class="actions">
         <a class="btn btn-ghost" href="réalisations.html">Voir les réalisations</a>
-        <a class="btn btn-primary" href="index.html#contact">Nous contacter</a>
+        <a class="btn btn-primary" href="tel:+33767197467" aria-label="Appeler CAZA COMM">Nous contacter</a>
       </div>
     </div>
   </div>
