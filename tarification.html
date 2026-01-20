@@ -139,24 +139,27 @@ background-repeat:no-repeat}
 .miniLine span{color:rgba(11,15,20,.70);font-weight:800}
 
 
-    /* ====== Pricing (reprend la base index, mais plus “page dédiée”) ====== */
-    .pricingTop{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px}
-    .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px}
-    .plan{border-radius:22px;padding:18px;border:1px solid rgba(16,24,40,.10);background:rgba(255,255,255,.84);box-shadow:0 18px 44px rgba(16,24,40,.08);position:relative;overflow:hidden;display:flex;flex-direction:column;min-height:340px}
-    .plan .tag{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;white-space:nowrap;padding:8px 10px;border-radius:999px;background:rgba(16,24,40,.05);border:1px solid rgba(16,24,40,.08);font-weight:900;color:rgba(11,15,20,.76)}
-    .plan.featured{border-color:rgba(22,193,114,.24);box-shadow:0 22px 60px rgba(16,24,40,.10)}
-    .planTop{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
-    .picked{font-size:12px;font-weight:900;color:rgba(11,15,20,.62);padding-top:4px}
-    .price{display:flex;align-items:baseline;gap:10px;margin:14px 0 8px 0}
-    .price .val{font-size:40px;font-weight:900;letter-spacing:-.04em}
-    .price .per{color:var(--muted);font-weight:900}
-    .list{display:grid;gap:8px;margin:14px 0 10px 0;padding:0;list-style:none}
-    .list li{display:flex;gap:10px;align-items:flex-start;color:rgba(11,15,20,.78);font-weight:700}
-    .list svg{margin-top:2px;flex:0 0 auto}
-    .setupFee{margin:10px 0 12px 0;padding:12px;border-radius:16px;border:1px solid rgba(16,24,40,.10);background:rgba(16,24,40,.03);font-weight:900;color:rgba(11,15,20,.78)}
-    .plan .btn{width:100%;margin-top:auto}
-    /* Tag BEST en vert (comme Premium) */
-    .plan.featured .tag{background:rgba(22,193,114,.14);border-color:rgba(22,193,114,.22);color:#0b2016}
+    /* ====== Pricing ====== */
+.pricingTop{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px}
+.pricingSingle{max-width:760px;margin:18px auto 0 auto;border-radius:22px;padding:22px;border:1px solid rgba(16,24,40,.10);background:rgba(255,255,255,.86);box-shadow:0 18px 44px rgba(16,24,40,.08);position:relative;overflow:hidden}
+.pricingSingle:before{content:"";position:absolute;inset:-140px -120px auto auto;width:380px;height:380px;border-radius:999px;background:radial-gradient(circle at 40% 40%,rgba(22,193,114,.18),rgba(22,193,114,0) 68%)}
+.pricingSingleTop{display:flex;align-items:center;justify-content:space-between;gap:10px;position:relative;z-index:1}
+.pricingSingleTop .tag{font-weight:950}
+
+.pricingPrice{margin:14px 0 10px 0;position:relative;z-index:1}
+.pricingPrice .monthly{display:flex;align-items:baseline;gap:10px}
+.pricingPrice .monthly .val{font-size:44px;font-weight:950;letter-spacing:-.04em}
+.pricingPrice .monthly .per{color:var(--muted);font-weight:900}
+
+.pricingPrice .setup{margin-top:10px;padding:12px;border-radius:16px;border:1px solid rgba(16,24,40,.10);background:rgba(16,24,40,.03);font-weight:800;color:rgba(11,15,20,.78)}
+html.dark .pricingPrice .setup{background:rgba(233,238,245,.06)}
+
+.pricingList{display:grid;gap:10px;margin:14px 0 0 0;padding:0;list-style:none;position:relative;z-index:1}
+.pricingList li{display:flex;gap:10px;align-items:flex-start;color:rgba(11,15,20,.82);font-weight:700}
+.dotOk{width:10px;height:10px;border-radius:999px;background:rgba(22,193,114,.95);margin-top:7px;flex:0 0 auto}
+
+.pricingCtas{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px;position:relative;z-index:1}
+.pricingNote{margin-top:14px;color:rgba(11,15,20,.72);font-weight:700;position:relative;z-index:1}
 
 
     /* ====== Premium sur devis : épuré + motifs (même taille) ====== */
@@ -349,70 +352,46 @@ background-repeat:no-repeat}
       </div>
     </section>
 
-    <!-- ====== Plans + Comparateur ====== -->
-    <section class="section bg-light" id="plans" aria-label="Plans">
-      <div class="container">
-        <div class="pricingTop">
-          <div>
-            <span class="kicker"><span class="dot" aria-hidden="true"></span>Plans</span>
-            <h2>Des plans simples. Vous choisissez, on exécute.</h2>
-          </div>
+     <!-- ====== Pricing ====== -->
+<section class="section bg-light" id="plans" aria-label="Tarification">
+  <div class="container">
+    <div class="pricingTop">
+      <div class="reveal">
+        <span class="kicker"><span class="dot" aria-hidden="true"></span>Plan</span>
+        <h2>Un prix unique, comme votre site.</h2>
+      </div>
+      <div class="reveal" aria-label="Période">
+        <span class="pill"><b>Sans engagement</b></span>
+      </div>
+    </div>
+
+    <div class="pricingSingle reveal" aria-label="Offre unique">
+      <div class="pricingSingleTop">
+        <span class="tag">OFFRE UNIQUE</span>
+      </div>
+
+      <div class="pricingPrice">
+        <div class="monthly">
+          <div class="val">49</div><div class="per">,17 € /mois HT</div>
         </div>
 
-        <div class="plans" aria-label="Cartes de prix">
-          <article class="plan" data-plan="essential">
-            <span class="tag">ESSENTIAL</span>
-            <div class="price"><div class="val">€24</div><div class="per">,17 /mois HT</div></div>
-            <ul class="list" aria-label="Inclus Essentiel">
-              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>1 seule page avec plusieurs parties</li>
-              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Sur mesure</li>
-              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Boutons d'action + Moyens de contact</li>
-            </ul>
-            <div class="setupFee">Frais de création : <b>200 € HT</b></div>
-            <a class="btn btn-primary" href="https://buy.stripe.com/00wcN6gc5aYn8JP01w9bO07" aria-label="Choisir le plan Essential">Choisir ce plan</a>
-          </article>
-
-          <article class="plan featured" data-plan="pro">
-            <div class="planTop">
-              <span class="tag">BEST</span>
-              <span class="picked">Le plus choisi</span>
-            </div>
-            <div class="price"><div class="val">€49</div><div class="per">,17 /mois HT</div></div>
-            <ul class="list" aria-label="Inclus Best">
-              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Pages illimités</li>
-              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Sur mesure</li>
-              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Moyens de contact personnalisé</li>
-            </ul>
-            <div class="setupFee">Frais de création : <b>400 € HT</b></div>
-            <a class="btn btn-primary" href="https://buy.stripe.com/fZu8wQgc5c2re49cOi9bO08" aria-label="Choisir le plan Pro">Choisir ce plan</a>
-          </article>
-
-          <article class="plan premiumSpecial" data-plan="premium">
-            <span class="tag">PREMIUM</span>
-            <div class="price"><div class="val">Sur devis</div></div>
-            <a class="btn btn-primary" href="https://cazacomm.youcanbook.me" aria-label="Réserver un appel Premium">Réserver un appel</a>
-          </article>
-        </div>
-
-        <!-- Comparateur (repris de la page index) -->
-        <div class="compare reveal" aria-label="Tableau comparatif">
-          <div class="row head"><div class="cell">Fonctionnalités clés</div><div class="cell">ESSENTIAL</div><div class="cell">BEST</div><div class="cell">PREMIUM</div></div>
-          <div class="row"><div class="cell">Design sur mesure</div><div class="cell"><span class="ok" aria-label="Oui"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div><div class="cell"><span class="ok" aria-label="Oui"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div><div class="cell"><span class="ok" aria-label="Oui"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div></div>
-          <div class="row"><div class="cell">Hébergement + nom de domaine inclus</div><div class="cell"><span class="ok" aria-label="Oui"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div><div class="cell"><span class="ok" aria-label="Oui"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div><div class="cell"><span class="ok" aria-label="Oui"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div></div>
-          <div class="row"><div class="cell">Pages légales</div><div class="cell"><span class="ok" aria-label="Oui"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div><div class="cell"><span class="ok" aria-label="Oui"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div><div class="cell"><span class="ok" aria-label="Oui"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div></div>
-          <div class="row"><div class="cell">Modification hebdomadaire</div><div class="cell"><span class="no" aria-label="Non"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></span></div><div class="cell"><span class="ok" aria-label="Oui"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div><div class="cell"><span class="ok" aria-label="Oui"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div></div>
-          <div class="row"><div class="cell">Livraison 1 semaine</div><div class="cell"><span class="ok" aria-label="Oui"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div><div class="cell"><span class="ok" aria-label="Oui"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div><div class="cell"><span class="no" aria-label="Non"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div></div>
-          <div class="row"><div class="cell">Pages supplémentaires</div><div class="cell"><span class="no" aria-label="Non"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></span></div><div class="cell"><span class="ok" aria-label="Oui"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div><div class="cell"><span class="ok" aria-label="Oui"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div></div>
-          <div class="row"><div class="cell">Fonctionnalités spéciales</div><div class="cell"><span class="no" aria-label="Non"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></span></div><div class="cell"><span class="no" aria-label="Non"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></span></div><div class="cell"><span class="ok" aria-label="Oui"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div></div>
-          <div class="row"><div class="cell">Support prioritaire</div><div class="cell"><span class="ok" aria-label="Oui"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div><div class="cell"><span class="ok" aria-label="Oui"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div><div class="cell"><span class="ok" aria-label="Oui"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div></div>
-        </div>
-
-        <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end;margin-top:14px;">
-          <a class="btn btn-ghost" href="https://wa.me/33767197467?text=Bonjour%20CAZA%20COMM%2C%20j%27ai%20une%20question%20pour%20un%20site%20web." aria-label="Poser une question">Poser une question</a>
-          <a class="btn btn-primary" href="réalisations.html" aria-label="Voir les réalisations">Voir les réalisations</a>
+        <div class="setup">
+          À la création (1 journée) : <b>400 € HT</b>
         </div>
       </div>
-    </section>
+
+      <ul class="pricingList" aria-label="Inclus">
+        <li><span class="dotOk" aria-hidden="true"></span>Design sur mesure</li>
+        <li><span class="dotOk" aria-hidden="true"></span>Hébergement + nom de domaine inclus</li>
+        <li><span class="dotOk" aria-hidden="true"></span>Pages légales</li>
+        <li><span class="dotOk" aria-hidden="true"></span>Modifications hebdomadaires</li>
+        <li><span class="dotOk" aria-hidden="true"></span>Pages supplémentaires si besoin</li>
+        <li><span class="dotOk" aria-hidden="true"></span>Livraison 1 journée</li>
+        <li><span class="dotOk" aria-hidden="true"></span>Accompagnement et évolutions personnalisées</li>
+      </ul>
+  </div>
+  </div>
+</section>
 
     <!-- ====== Avis Google (carousel) ====== -->
     <section class="section bg-green" aria-label="Avis Google">
