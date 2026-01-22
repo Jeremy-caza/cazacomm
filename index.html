@@ -52,7 +52,7 @@
 
   <style>
     /* ====== Base ====== */
-    :root{--bg:#ffffff;--bg2:#f6f7f9;--card:#ffffff;--text:#0b0f14;--muted:#5a6675;--border:rgba(16,24,40,.12);--shadow:0 14px 40px rgba(16,24,40,.08);--shadow2:0 8px 24px rgba(16,24,40,.08);--accent:#16c172;--accent2:#0ea35d;--ring:rgba(22,193,114,.35);--radius:18px;--radius2:26px;--max:1140px;--pad:22px;--ff:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;--ff2:Fraunces,ui-serif,Georgia,serif;--headerH:72px;--blur:14px}
+    :root{--bg:#ffffff;--bg2:#f6f7f9;--card:#ffffff;--text:#0b0f14;--muted:#5a6675;--ctaRed:#e53935;--border:rgba(16,24,40,.12);--shadow:0 14px 40px rgba(16,24,40,.08);--shadow2:0 8px 24px rgba(16,24,40,.08);--accent:#16c172;--accent2:#0ea35d;--ring:rgba(22,193,114,.35);--radius:18px;--radius2:26px;--max:1140px;--pad:22px;--ff:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;--ff2:Fraunces,ui-serif,Georgia,serif;--headerH:72px;--blur:14px}
     *{box-sizing:border-box}
     html,body{height:100%}
     body{margin:0;font-family:var(--ff);color:var(--text);background:linear-gradient(180deg,var(--bg) 0%,var(--bg2) 100%);line-height:1.55;letter-spacing:-.01em;scroll-behavior:smooth}
@@ -133,12 +133,20 @@
 .five svg{opacity:.9}
 .heroTitle{margin-top:10px;position:relative;z-index:1}
 .heroTitle .accent{color:var(--accent)}
-.heroSub{font-size:16px;max-width:62ch;margin-top:22px;margin-left:auto;margin-right:auto;position:relative;z-index:1;color:rgba(11,15,20,.92)}
+.heroTitle .heroRed{color:var(--ctaRed)}
+.heroSub{font-size:18px;font-weight:650;line-height:1.65;max-width:56ch;margin-top:26px;margin-left:auto;margin-right:auto;padding-top:14px;border-top:1px solid rgba(16,24,40,.10);color:rgba(11,15,20,.90);text-align:center;text-align-last:center;text-justify:auto;hyphens:none;-webkit-hyphens:none;position:relative;z-index:1}
 .heroCtas{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px;position:relative;z-index:1}
 .heroVisual{border-radius:var(--radius2);border:1px solid rgba(16,24,40,.10);background:rgba(11,15,20,.08);box-shadow:var(--shadow);position:relative;overflow:hidden;min-height:440px}
-.divider{height:1px;background:rgba(16,24,40,.08);margin:34px 0}
 .heroVideo{width:100%;height:100%;display:block;object-fit:cover}
 .heroVisual video{border-radius:var(--radius2)}
+.divider{height:1px;background:rgba(16,24,40,.08);margin:34px 0}
+
+/* Responsive */
+@media (max-width:900px){
+  .hero{padding:56px 0 44px 0}
+  .heroGrid{grid-template-columns:1fr}
+  .heroVisual{min-height:320px}
+  .heroSub{font-size:17px;margin-top:22px}}
 
 
     /* ====== Avis Google (carousel) ====== */
@@ -369,14 +377,14 @@ html.dark .founderPhoto{background:rgba(233,238,245,.06)}
       <div class="container">
         <div class="heroGrid">
           <div class="heroCard reveal">
-            <h1 class="heroTitle">Création de <span class="accent">site internet</span> en 1 jour</h1>
+            <h1 class="heroTitle">Création de <span class="accent">site internet</span> en <span class="heroRed">1 jour</span></h1>
             <p class="heroSub">Nous réalisons votre site internet sur mesure, avec vous en visioconférence ou par téléphone. Travaillons ensemble en mode agile pour trouver de nouveaux clients sur Google.</p>
           </div>
 
          <div class="heroVisual reveal" aria-label="Vidéo de présentation">
-  <video class="heroVideo" controls preload="metadata" playsinline>
-    <source src="video-hero.mp4" type="video/mp4">
-  </video>
+ <video class="heroVideo" controls preload="metadata" playsinline poster="images/video-cover.jpg">
+  <source src="video-hero.mp4" type="video/mp4">
+</video>
 </div>
 
         </div>
